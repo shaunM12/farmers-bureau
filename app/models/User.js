@@ -15,19 +15,19 @@ module.exports = mongoose => {
                 required: true,
                 match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Must be a valid email"]
             },
-            password: {
-                type: String,
-                required: true,
-                minlength: [8, "Minimum length must be at least 8 letters of numbers"],
-                match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
-            },
-            status: {
-                enum: ['admininstrator', 'user'],
-            }
+            // password: {
+            //     type: String,
+            //     required: true,
+            //     minlength: [8, "Minimum length must be at least 8 letters of numbers"],
+            //     match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
+            // },
+            // status: {
+            //     enum: ['admininstrator', 'user'],
+            // }
         }
     )
-    const registeredUser = mongoose.model("registeredUser", schema)
-    return registeredUser
+    const User = mongoose.model("User", schema)
+    return User
 }
 
 
