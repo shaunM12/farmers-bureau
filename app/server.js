@@ -40,5 +40,5 @@ require('./routes/user.routes')(app)
 
 
 app.listen(8080, () => {
-    console.log('The server is running on http://localhost:8080')
+    console.log('The server is running on http://localhost:8085')
 })
