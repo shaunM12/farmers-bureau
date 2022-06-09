@@ -14,7 +14,6 @@ const Registration = () => {
   const registrationSchema = Yup.object().shape({
     firstName: Yup.string().required("Required"),
     lastName: Yup.string().required("Required"),
-    username: Yup.string().required("Required"),
     email: Yup.string().email("Invalid email address").required("Required"),
     password: Yup.string()
       .min(5, "Must be more than 5 characters")
@@ -31,7 +30,6 @@ const Registration = () => {
     let data = {
       firstName: values.firstName,
       lastName: values.lastName,
-      username: values.username,
       email: values.email,
       password: values.password,
       repeatPassword: values.repeatPassword
@@ -70,6 +68,7 @@ const Registration = () => {
       })
     .then(res => res.json())
     .then(data => console.log(data))
+    navigate('/login')
   };
 
   return (
@@ -79,7 +78,6 @@ const Registration = () => {
         initialValues={{
           firstName: "",
           lastName: "",
-          username: "",
           email: "",
           password: "",
           repeatPassword: "",
@@ -103,12 +101,6 @@ const Registration = () => {
             name="lastName"
             type="text"
             placeholder="Last Name"
-          />
-          <RegisterInputs
-            label="Username"
-            name="username"
-            type="text"
-            placeholder="Username"
           />
           <RegisterInputs
             label="Email"
