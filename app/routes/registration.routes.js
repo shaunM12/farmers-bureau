@@ -7,9 +7,12 @@ module.exports = app => {
     
     router.post('/', registration.create)
 
+    
+
 
 
 
 
     app.use('/registration', router)
+    
 }

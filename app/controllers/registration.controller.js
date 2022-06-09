@@ -10,7 +10,7 @@ const { token } = require('morgan');
 
 
 exports.create = async (req, res) => {
-    const { firstName, lastName, username, email, password, repeatPassword } = req.body
+    const { firstName, lastName, email, password, repeatPassword } = req.body
     console.log("password", req.body)
     
 
@@ -39,7 +39,6 @@ exports.create = async (req, res) => {
             const newRegistration = new Registration({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
-                username: req.body.username,
                 email: req.body.email,
                 password: hash
             })
