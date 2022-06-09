@@ -36,9 +36,9 @@ app.get("/", (req, res) => {
     res.json({Message: "Welcome to Farm & Food Magazine"})
 });
 
-require('./routes/user.routes')(app)
+require('./routes/registration.routes')(app)
 
 
-app.listen(8080, () => {
-    console.log('The server is running on http://localhost:8085')
+app.listen(8081, () => {
+    console.log('The server is running on http://localhost:8081')
 })
