@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './components/Navbar'
 import {Link, Routes, Route, Outlet}  from 'react-router-dom'
 import Register from './components/Register'
 import ResponsiveAppBar from './components/AppBar'
