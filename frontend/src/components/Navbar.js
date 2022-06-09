@@ -10,6 +10,7 @@ export default function Navbar() {
         <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem',}} >
         
         <Link to="/register">Register</Link>
+        <Link to="/registration">Registration</Link>
         </nav>
         <Outlet />
         </div>

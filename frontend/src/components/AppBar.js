@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Register from './Register'
+import Registration from './Registration'
 import Home from './Home'
 import {Link } from 'react-router-dom'
 
@@ -93,6 +94,11 @@ const ResponsiveAppBar = () => {
                 
                     <MenuItem key={"register"} onClick={handleCloseNavMenu}>
                     <Link to='/register'>Register</Link>
+
+                    </MenuItem>
+                    <MenuItem key={"registration"} onClick={handleCloseNavMenu}>
+                    <Link to='/registration'>Registration</Link>
+                    
                     </MenuItem>
                 
                 </Menu>
