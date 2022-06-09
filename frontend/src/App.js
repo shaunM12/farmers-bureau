@@ -7,8 +7,7 @@ import Home from './components/Home';
 
 
 function App() {
-  const baseURL = "http://localhost:8080/api";
-  console.log(window.location)
+  
   return (
     <div className="App">
       <header className="App-header">

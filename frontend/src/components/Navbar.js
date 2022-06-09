@@ -4,7 +4,7 @@ import Register from './Register'
 import { Outlet } from 'react-router-dom'
 
 export default function Navbar() {
-    console.log(window.location)
+  
     return (
         <div>
         <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem',}} >
