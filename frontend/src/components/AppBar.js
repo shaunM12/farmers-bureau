@@ -13,7 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Register from './Register'
+import Registration from './Registration'
 import Home from './Home'
+import {Link } from 'react-router-dom'
 
 const pages = ['Register', 'Home', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -89,11 +91,16 @@ const ResponsiveAppBar = () => {
                     display: { xs: 'block', md: 'none' },
                 }}
                 >
-                {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                
+                    <MenuItem key={"register"} onClick={handleCloseNavMenu}>
+                    <Link to='/register'>Register</Link>
+
                     </MenuItem>
-                ))}
+                    <MenuItem key={"registration"} onClick={handleCloseNavMenu}>
+                    <Link to='/registration'>Registration</Link>
+                    
+                    </MenuItem>
+                
                 </Menu>
             </Box>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
