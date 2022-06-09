@@ -1,19 +1,18 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom'
 import Register from './Register'
+import { Outlet } from 'react-router-dom'
 
 export default function Navbar() {
     console.log(window.location)
     return (
+        <div>
+        <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem',}} >
         
-        <nav className="nav">
-            <a href="/" className="home-page">Farm & Food</a>
-        <ul>
-        <li>
-            <a href="/register">Register Now</a>
-        </li>
-        </ul>
-    </nav>
+        <Link to="/register">Register</Link>
+        </nav>
+        <Outlet />
+        </div>
     
     )
 }
