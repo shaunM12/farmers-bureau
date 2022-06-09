@@ -15,6 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Register from './Register'
 import Registration from './Registration'
 import Home from './Home'
+import Login from './Login'
 import {Link } from 'react-router-dom'
 
 const pages = ['Register', 'Home', 'Blog'];
@@ -91,13 +92,11 @@ const ResponsiveAppBar = () => {
                     display: { xs: 'block', md: 'none' },
                 }}
                 >
-                    <MenuItem key={"register"} onClick={handleCloseNavMenu}>
-                    <Link to='/register'>Register</Link>
-
-                    </MenuItem>
                     <MenuItem key={"registration"} onClick={handleCloseNavMenu}>
                     <Link to='/registration'>Registration</Link>
-                    
+                    </MenuItem>
+                    <MenuItem key={"login"} onClick={handleCloseNavMenu}>
+                    <Link to='/login'>Login</Link>
                     </MenuItem>
                 
                 </Menu>

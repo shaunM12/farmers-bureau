@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from './components/Register'
 import Registration from './components/Registration'
+import Login from './components/Login'
 
 
 
@@ -15,6 +16,7 @@ root.render(
     <Route path="/" element={<App />} />
     <Route path="register" element={<Register />} />
     <Route path="registration" element={<Registration />} />
+    <Route path='login' element={<Login />} />
 
   </Routes>
 

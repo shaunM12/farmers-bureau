@@ -4,18 +4,19 @@ const secret = process.env.SECRET
 const Registration = ("../models/Registration")
 
 async function verifyToken(req, res, next) {
-    let {username, password} = req.body
+    let {email, password} = req.body
     let verifyToken
+    
 
     try { 
-        if(!username || !password) {
+        if(!email || !password) {
             res.status(404).send({ message: 'Must complete form'})
             return
         } 
         let user;
-        user = await Registration.findOne({ username: username})
+        user = await Registration.findOne({ email: email})
         if(!user) {
-            res.status(404).send({ message: "Username not found"})
+            res.status(404).send({ message: "email not found"})
             return
         }
         let matchPassword;
@@ -26,10 +27,11 @@ async function verifyToken(req, res, next) {
         }
         verifyToken = jwt.sign({ id: user.id}, secret)
         res.cookie("verifyToken", verifyToken)
-        console.log({verifyToken, user: {id: user.id, username:username}})
+        console.log({verifyToken, user: {id: user.id, email:email}})
         } catch (error) {
             res.status(500).json({ error: error.message})
         }
         res.loggedIn = verifyToken
+        res.user = user
         next()
     }

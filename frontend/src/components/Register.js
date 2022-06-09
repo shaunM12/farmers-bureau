@@ -21,7 +21,6 @@ const Register = (props) => {
     function handleChange(e) {
         const firstName = e.target.firstName
         const lastName = e.target.lastName
-        const username = e.target.username
         const email = e.target.email
         const password = e.target.password
         const repeatPassword = e.target.repeatPassword

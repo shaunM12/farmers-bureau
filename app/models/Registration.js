@@ -14,12 +14,6 @@ module.exports = mongoose => {
                 required: true,
                 match: [/^[a-z ,.'-]+$/i, "Must be only letters"]
             },
-            username: {
-                type: String,
-                required: true,
-                minlength: [5, "Must be at least 5 letters"],
-                match: [/^[\w+\d+/]+/, "Must be alphanumeric"]
-            },
             email: {
                 type: String,
                 required: true,

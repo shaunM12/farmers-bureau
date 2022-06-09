@@ -1,6 +1,9 @@
+require('dotenv').config()
 const express = require("express")
 const cors = require("cors")
-var logger = require('morgan')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+
 
 const app = express()
 
@@ -37,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 require('./routes/registration.routes')(app)
+require('./routes/login.routes')(app)
 
 
 app.listen(8081, () => {
