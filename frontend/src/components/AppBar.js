@@ -91,7 +91,6 @@ const ResponsiveAppBar = () => {
                     display: { xs: 'block', md: 'none' },
                 }}
                 >
-                
                     <MenuItem key={"register"} onClick={handleCloseNavMenu}>
                     <Link to='/register'>Register</Link>
 

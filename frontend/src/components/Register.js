@@ -3,8 +3,6 @@ import React, {useState, useEffect} from 'react';
 
 const Register = (props) => {
 
-
-
     const initialRegisterState = {
         id: null,
         firstName: "",
