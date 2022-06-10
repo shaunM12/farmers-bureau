@@ -1,9 +1,14 @@
-const express = require('express')
-const router = express.Router()
-const loginController = require('../controllers/login.controller')
-
-router.get('/login', loginController.userLogin) 
-
+module.exports = app => {
+    const login = require('../controllers/login.controller')
+    const express = require('express')
+    var router = require('express')(router)
 
 
-module.exports = router
+
+    router.get("/", login)
+
+
+
+
+    app.use('/login', router)
+}

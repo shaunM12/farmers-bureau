@@ -18,15 +18,15 @@ exports.create = async (req, res) => {
         res.status(400).send({ message: "Please fill in username"})
         return;
     }
-    // if (username === "" || password === "" || email === "") {
-    //     res.send(400).send({ message: 'Please complete form'})
-    //     return;
-    // }
-    // const tempUser = await User.findOne({username: username})
-    // if (tempUser) {
-    //     res.status(400).send({ message: "Please pick another username"})
-    //     return;
-    // }
+    if (username === "" || password === "" || email === "") {
+        res.send(400).send({ message: 'Please complete form'})
+        return;
+    }
+    const tempUser = await User.findOne({username: username})
+    if (tempUser) {
+        res.status(400).send({ message: "Please pick another username"})
+        return;
+    }
     if (password !== repeatPassword) {
         res.send({ message: "Passwords do not match!"})
     } else {

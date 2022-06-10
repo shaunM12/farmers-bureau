@@ -98,6 +98,9 @@ const ResponsiveAppBar = () => {
                     <MenuItem key={"login"} onClick={handleCloseNavMenu}>
                     <Link to='/login'>Login</Link>
                     </MenuItem>
+                    <MenuItem key={"event"} onClick={handleCloseNavMenu}>
+                    <Link to='/event'>Add An Event</Link>
+                    </MenuItem>
                 
                 </Menu>
             </Box>
@@ -135,7 +138,7 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 </IconButton>
                 </Tooltip>
                 <Menu

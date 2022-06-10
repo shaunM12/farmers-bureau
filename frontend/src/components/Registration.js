@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import RegistrationService from "../services/RegistrationService";
 import RegisterInputs from './RegisterInputs'
 import { useNavigate } from 'react-router-dom'
+import AppBar from './AppBar'
 
 const Registration = () => {
   const navigate = useNavigate()
@@ -43,9 +44,6 @@ const Registration = () => {
       // setSubmitted(true)
         // navigate("/login")
 
-     
-    
-      
         // .then(response => {
         // setNewRegistration({
         //   id: response.data.id,
@@ -66,13 +64,14 @@ const Registration = () => {
           'Content-Type' : 'application/json'
         }
       })
-    .then(res => res.json())
-    .then(data => console.log(data))
+      .then(res => res.json())
+      .then(data => console.log(data))
+    };
     navigate('/login')
-  };
 
   return (
     <div>
+      <AppBar />
       <h1>Please Register</h1>
       <Formik
         initialValues={{
