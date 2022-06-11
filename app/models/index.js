@@ -7,6 +7,7 @@ mongoose.Promise = global.Promise
 const db = {}
 db.mongoose = mongoose
 db.url = dbConfig.url
-db.registration = require('./Registration')(mongoose)
+db.user = require('./User')(mongoose)
+db.articles = require('./Article')(mongoose)
 
 module.exports = db

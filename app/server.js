@@ -38,9 +38,15 @@ db.mongoose.connect(db.url, {
 app.get("/", (req, res) => {
     res.json({Message: "Welcome to Farm & Food Magazine"})
 });
+// app.get("/user", (req, res) => {
+//     res.json({Message: "welcome to the user page"})
+// })
+// app.use('/login', login)
 
-require('./routes/registration.routes')(app)
-require('./routes/login.routes')(app)
+// require('./routes/registration.routes')
+// require('./routes/login.routes')
+require('./routes/user.routes')(app)
+require('./routes/article.routes')(app)
 
 
 app.listen(8081, () => {

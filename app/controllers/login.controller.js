@@ -1,8 +1,10 @@
-const db = require('../models')
-const Login = db.login
-const verifyToken = require('../middleware/verifyToken')
+// const db = require('../models')
+// const User = db.User
+// const verifyToken = require('../middleware/verifyToken')
 
-exports.get = verifyToken, (req, res, next) => {
-    let user = res.user
-    console.log(user)
-} 
+// exports.findOne = verifyToken, (req, res, next) => {
+//     let user = res.user
+//     console.log(user)
+
+//     Reg
+// } 
