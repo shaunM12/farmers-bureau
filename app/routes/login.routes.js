@@ -1,14 +1,14 @@
-module.exports = app => {
-    const login = require('../controllers/login.controller')
-    const express = require('express')
-    var router = require('express')(router)
+// module.exports = app => {
+//     const login = require('../controllers/login.controller')
+//     const express = require('express')
+//     var router = require('express')(router)
 
 
 
-    router.get("/", login)
+//     router.get("/:id", login.findOne)
 
 
 
 
-    app.use('/login', router)
-}
+//     app.use('/login', router)
+// }

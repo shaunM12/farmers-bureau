@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage, useField } from "formik";
 import * as Yup from "yup";
-import RegistrationService from "../services/RegistrationService";
+// import RegistrationService from "../services/RegistrationService";
+import UserService from '../services/UserService'
 import RegisterInputs from './RegisterInputs'
 import { useNavigate } from 'react-router-dom'
 import AppBar from './AppBar'
 
 const Registration = () => {
   const navigate = useNavigate()
-  // const Registration = () => {
-
-
 
   const registrationSchema = Yup.object().shape({
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
+    // firstName: Yup.string().required("Required"),
+    // lastName: Yup.string().required("Required"),
+    username: Yup.string().required("Must have a valid username"),
     email: Yup.string().email("Invalid email address").required("Required"),
     password: Yup.string()
       .min(5, "Must be more than 5 characters")
@@ -29,8 +28,7 @@ const Registration = () => {
     
     console.log(1111,values)
     let data = {
-      firstName: values.firstName,
-      lastName: values.lastName,
+      username: values.username,
       email: values.email,
       password: values.password,
       repeatPassword: values.repeatPassword
@@ -38,7 +36,7 @@ const Registration = () => {
     };
     // const [newRegistration, setNewRegistration] = useState(initialValues)
     // const [submitted, setSubmitted] = useState(false)
-    console.log("data", data)
+    // console.log("data", data)
     // RegistrationService.create(data)
     //   console.log('hello')
       // setSubmitted(true)
@@ -57,7 +55,7 @@ const Registration = () => {
         //     setSubmitted(true)
         //     console.log(response.data)
         // })
-      return fetch('http://localhost:8081/registration', {
+      return fetch('http://localhost:8081/user', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -67,7 +65,7 @@ const Registration = () => {
       .then(res => res.json())
       .then(data => console.log(data))
     };
-    navigate('/login')
+    // navigate('/login')
 
   return (
     <div>
@@ -75,8 +73,7 @@ const Registration = () => {
       <h1>Please Register</h1>
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
+          username: "",
           email: "",
           password: "",
           repeatPassword: "",
@@ -89,17 +86,17 @@ const Registration = () => {
       >
         {/* {({errors, touched }) => ( */}
         <Form>
-          <RegisterInputs
+          {/* <RegisterInputs
             label="First Name"
             name="firstName"
             type="text"
             placeholder="First Name"
-          />
+          /> */}
           <RegisterInputs
-            label="Last Name"
-            name="lastName"
+            label="Username"
+            name="username"
             type="text"
-            placeholder="Last Name"
+            placeholder="Username"
           />
           <RegisterInputs
             label="Email"

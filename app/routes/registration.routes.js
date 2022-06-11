@@ -1,11 +1,11 @@
-module.exports = app => {
-    const registration = require('../controllers/registration.controller.js')
-    const express = require('express')
-    var router = require('express')(router)
+// module.exports = app => {
+//     const registration = require('../controllers/registration.controller.js')
+//     const express = require('express')
+//     var router = require('express')(router)
     
     
     
-    router.post('/', registration.create)
+//     router.post('/', registration.create)
 
     
 
@@ -13,6 +13,6 @@ module.exports = app => {
 
 
 
-    app.use('/registration', router)
+//     app.use('/registration', router)
     
-}
+// }

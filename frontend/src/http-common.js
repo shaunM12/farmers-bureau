@@ -6,3 +6,10 @@ export default axios.create({
         "Content-type": "application/json"
     }
 })
+
+// export default axios.findOne({
+//     baseURL: 'http://localhost:8081',
+//     headers: {
+//         'Content-Type' : 'application/json'
+//     }
+// })

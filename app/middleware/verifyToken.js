@@ -1,20 +1,20 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secret = process.env.SECRET
-const Registration = ("../models/Registration")
+const User = ("../models/User")
 
 async function verifyToken(req, res, next) {
-    let {email, password} = req.body
+    let {username, email, password} = req.body
     let verifyToken
     
 
     try { 
-        if(!email || !password) {
+        if(!username || !email || !password ) {
             res.status(404).send({ message: 'Must complete form'})
             return
         } 
         let user;
-        user = await Registration.findOne({ email: email})
+        user = await User.findOne({ username: username})
         if(!user) {
             res.status(404).send({ message: "email not found"})
             return
