@@ -4,7 +4,15 @@ module.exports = app => {
 
     router.post('/', articles.create)
 
+    router.get('/:id', articles.findOne)
 
+    router.get('/', articles.findAll)
+
+    router.put('/:id', articles.update)
+
+    router.delete('/:id', articles.delete)
+
+    router.delete('/', articles.deleteAll)
 
 
     app.use('/articles', router)
