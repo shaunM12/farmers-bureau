@@ -3,6 +3,7 @@ const express = require("express")
 const cors = require("cors")
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 
 
 const app = express()
@@ -38,16 +39,10 @@ db.mongoose.connect(db.url, {
 app.get("/", (req, res) => {
     res.json({Message: "Welcome to Farm & Food Magazine"})
 });
-// app.get("/user", (req, res) => {
-//     res.json({Message: "welcome to the user page"})
-// })
-// app.use('/login', login)
 
-// require('./routes/registration.routes')
-// require('./routes/login.routes')
 require('./routes/user.routes')(app)
 require('./routes/article.routes')(app)
-
+require('./routes/event.routes')(app)
 
 app.listen(8081, () => {
     console.log('The server is running on http://localhost:8081')
