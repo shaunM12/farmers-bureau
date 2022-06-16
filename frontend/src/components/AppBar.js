@@ -17,6 +17,8 @@ import Registration from './Registration'
 import Home from './Home'
 import Login from './Login'
 import {Link } from 'react-router-dom'
+import Events from '../components/EventList'
+import AddArticle from '../components/AddArticle'
 
 const pages = ['Register', 'Home', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -97,6 +99,15 @@ const ResponsiveAppBar = () => {
                     </MenuItem>
                     <MenuItem key={"login"} onClick={handleCloseNavMenu}>
                     <Link to='/login'>Login</Link>
+                    </MenuItem>
+                    <MenuItem key={"articles"} onClick={handleCloseNavMenu}>
+                    <Link to='/articles'>Articles</Link>
+                    </MenuItem>
+                    <MenuItem key={"events"} onClick={handleCloseNavMenu}>
+                    <Link to='/events'>Events</Link>
+                    </MenuItem>
+                    <MenuItem key={"addarticle"} onClick={handleCloseNavMenu}>
+                    <Link to='/addarticle'>Add A New Article</Link>
                     </MenuItem>
                 
                 </Menu>

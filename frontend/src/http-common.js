@@ -7,9 +7,3 @@ export default axios.create({
     }
 })
 
-// export default axios.findOne({
-//     baseURL: 'http://localhost:8081',
-//     headers: {
-//         'Content-Type' : 'application/json'
-//     }
-// })
