@@ -3,16 +3,19 @@ const Event = db.events
 
 
 exports.create = (req, res) => {
-    if(!req.body.name) {
+    const {name, location, startTime, endTime, dateMonth, dateDay, description, sponsoredBy} = req.body
+    if(!req.body) {
         res.send('Please fill in the name of event')
-        return;
+        return
     }
 
     const event = new Event({
         name: req.body.name,
         location: req.body.location,
-        time: req.body.time,
-        date: req.body.date,
+        startTime: req.body.startTime,
+        endTime: req.body.endTime,
+        dateMonth: req.body.dateMonth,
+        dateDay: req.body.dateDay,
         description: req.body.description,
         sponsoredBy: req.body.sponsoredBy
     })

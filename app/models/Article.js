@@ -6,6 +6,9 @@ module.exports = mongoose => {
             title: String,
             author: String,
             content: String,
+            image: String,
+        }, {
+            timestamps: true
         }
     )
     const Article = mongoose.model('article', schema)

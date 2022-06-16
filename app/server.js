@@ -4,6 +4,8 @@ const cors = require("cors")
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const multer = require('multer')
+const upload = multer({ dest: 'public/'})
 
 
 const app = express()
@@ -12,6 +14,7 @@ const app = express()
 //     origin: "http://localhost:8081"
 // };
 
+app.use('/public',express.static('public'))
 
 app.use(cors())
 
@@ -43,6 +46,18 @@ app.get("/", (req, res) => {
 require('./routes/user.routes')(app)
 require('./routes/article.routes')(app)
 require('./routes/event.routes')(app)
+
+
+// app.get('/public/:imageName', (req, res) => {
+//     const imageName = req.params.imageName
+//     const readStream = fs.createReadStream(`public/${imageName}`)
+//     readStream.pip(res)
+// })
+// app.post('/articles', upload.single('image'), (req, res) => {
+//     const imagePath = req.file.path
+//     // const description = req.body.description
+//     res.send({ imagePath})
+// })
 
 app.listen(8081, () => {
     console.log('The server is running on http://localhost:8081')

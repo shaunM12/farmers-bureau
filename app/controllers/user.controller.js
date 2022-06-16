@@ -14,7 +14,7 @@ const token = require('../middleware/token')
 exports.create =  async (req, res,) => {
     const { username, email, password } = req.body
     
-    let tempUser = await User.findOne({email: emaill})
+    let tempUser = await User.findOne({email: email})
     if (tempUser) {
         return res.json("Please pick another email")
     } else {
@@ -43,18 +43,23 @@ exports.create =  async (req, res,) => {
         }
     }
 
-exports.findOne = (req, res) => {
+exports.findOne =  token, async  (req, res, next) =>  {
+    console.log(3333, req.body)
     const id = req.params.id
+    const email = req.params.email
+    
     // console.log("id", id)
-    // const cookie = res.cookie
-    // console.log(5555, cookie)
+    const cookie = res.cookie
+    console.log(5555, cookie)
+    console.log(req.body)
 
-    User.findById(id)
+    User.findOne(email)
     .then(data => {
-        console.log(id)
+        console.log(email)
         if(!data) {
             res.send("Could not find user with id ")
         } else {
+            console.log(data)
             res.send(data)
         }
     })

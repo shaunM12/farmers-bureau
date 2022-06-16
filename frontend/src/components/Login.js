@@ -7,35 +7,52 @@ import RegisterInputs from './RegisterInputs';
 // import userLogin from '../services/LoginService';
 import userService from '../services/UserService'
 import Home from './Home'
+import { useState } from 'react'
+import {useCookies } from 'react-cookie'
+import axios from 'axios'
 
 const Login = () => {
+    // e.preventDefault()
+ 
+    // const storedJwt = localStorage.getItem('tokenAccess')
+    // const [jwt, setJwt] = useState(storedJwt|| null )
     const navigate = useNavigate()
-    const login = (values) => {
+    const login = async (values) => {
+        // const config = {headers: {"Content-Type" : "application/json"}}
         const data = {
-            username: values.username,
             email: values.email,
-            password: values.password
+            password: values.password,
         }
-        console.log(44444,data)
-        userService(data)
-        return fetch('http://localhost:8081/user', {
-            method: 'GET',
+        console.log(4444,data)
+        // userService.login(data)
+        // console.log("set user Service")
+        // return axios.get('/user', data)
+        // .then((res) => {
+        //     document.cookie = "accessToken= " + res./*token location*/
+        //     console.log(res.document.cookie)
+        // })
+        await fetch('http://localhost:8081/user', {
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                'Content-Type' : 'application/json'
+                'Content-Type' : 'application/json',
+                'Accept': 'application/json'
             }
         })
         .then(res => res.json())
         .then(data => console.log(data))
+        .catch(err =>  console.log(err)
+        )
+        
         
     }
 
     return (
         <div>
         <h1>Please Login</h1>
+       
         <Formik 
         initialValues={{
-            username: '',
             email: '',
             password: '',
 
@@ -45,12 +62,6 @@ const Login = () => {
         }}
         >
         <Form>
-        <RegisterInputs 
-            label="Username"
-            name="username"
-            type="text"
-            placeholder="Username"
-            />
         <RegisterInputs
             label="Email"
             name="email"
@@ -63,9 +74,7 @@ const Login = () => {
             type="text"
             placeholder="Password"
           />
-            <button type="submit" onPress={(e) => {
-                navigate('/home')
-            }}>Submit</button>
+            <button type="submit">Submit</button>
         </Form>
         </Formik>
         </div>
