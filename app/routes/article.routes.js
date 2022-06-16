@@ -1,8 +1,11 @@
 module.exports = app => {
+
+    const multer = require('multer')
+    const upload = multer({ dest: 'public'})
     const articles = require('../controllers/article.controller')
     var router = require('express')(router)
 
-    router.post('/', articles.create)
+    router.post('/', upload.single('image'), articles.create)
 
     router.get('/:id', articles.findOne)
 

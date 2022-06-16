@@ -10,9 +10,9 @@ module.exports = app => {
 
     // router.get('/', user.findAll)
 
-    router.get('/:id', user.findOne)
+    router.post('/', user.findOne)
 
-    router.post('/', user.create)
+    // router.post('/', user.create)
 
     app.use('/user', router)
 }

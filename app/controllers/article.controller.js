@@ -1,10 +1,10 @@
 const db = require('../models')
 const Article = db.articles
+const multer = require('multer')
+const upload = multer({ dest: 'public/'})
 
 
-
-
-exports.create = async (req, res) => {
+exports.create = upload.single('image'), (req, res) => {
 
     if(!req.body.title) {
         res.status(400).send({ message: "Please fill in title"})
@@ -14,7 +14,8 @@ exports.create = async (req, res) => {
     const article = new Article({
         title: req.body.title,
         author: req.body.author,
-        content: req.body.content
+        content: req.body.content,
+        image: req.file.path
     })
 
     article.save(article).then(data => { res.send(data)})
