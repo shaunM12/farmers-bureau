@@ -108,6 +108,7 @@ const ResponsiveAppBar = () => {
                     </MenuItem>
                     <MenuItem key={"addarticle"} onClick={handleCloseNavMenu}>
                     <Link to='/addarticle'>Add A New Article</Link>
+
                     </MenuItem>
                 
                 </Menu>
