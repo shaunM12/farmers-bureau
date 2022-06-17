@@ -57,16 +57,6 @@ const EventList = () => {
 
   return (
     <div>
-      {/* <input
-        type="text"
-        className="search-event-form"
-        placeholder="Search by Event Name"
-        defaultValue={searchEvent}
-        onChange={() => onChangeSearchName}
-      />
-      <button className="search-button" type="button" onClick={findByEvent} > Search </button>
-      <br />
-      <br /> */}
       <button className="add-event" type='button'
       onClick={navigateAddEvent}> Add Event </button>
     <div>
