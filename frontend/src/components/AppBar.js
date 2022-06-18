@@ -12,13 +12,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Register from './Register'
-
+import AddMarket from './AddMarket';
 import Home from './Home'
 import Login from './Login'
 import {Link } from 'react-router-dom'
 import Events from '../components/EventList'
 import AddArticle from '../components/AddArticle'
 import Article from '../components/Article'
+import MarketsList from '../components/MarketsList'
 
 const pages = ['Register', 'Home', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -108,6 +109,12 @@ const ResponsiveAppBar = () => {
                     </MenuItem>
                     <MenuItem key={"addarticle"} onClick={handleCloseNavMenu}>
                     <Link to='/addarticle'>Add A New Article</Link>
+                    </MenuItem>
+                    <MenuItem key={"addmarket"} onClick={handleCloseNavMenu}>
+                    <Link to='/addmarket'>Add A New Farmer's Market</Link>
+                    </MenuItem>
+                    <MenuItem key={"markets"} onClick={handleCloseNavMenu}>
+                    <Link to='/markets'>Farmer's Market</Link>
                     </MenuItem>
                 </Menu>
             </Box>

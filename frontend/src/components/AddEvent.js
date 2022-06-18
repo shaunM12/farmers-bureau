@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import EventService from '../services/EventService'
-
+import { useNavigate } from 'react-router'
 
 const AddEvent = () => {
+
+    const navigate = useNavigate()
     const initialEventState = {
         id: null,
         name: "",
@@ -18,13 +20,16 @@ const AddEvent = () => {
     const [submitted, setSubmitted] = useState(false)
 
     const handleInputChange = e => {
+        e.preventDefault()
         const {name, value} = e.target
         setEvent({...event, [name]: value})
     }
 
     const newEvent = () => {
+
         setEvent(initialEventState)
         setSubmitted(false)
+        navigate('/')
     }
 
     const saveEvent = () => {
