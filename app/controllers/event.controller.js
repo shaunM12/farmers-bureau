@@ -17,7 +17,7 @@ exports.create = (req, res) => {
         month: req.body.month,
         day: req.body.day,
         description: req.body.description,
-        sponsoredBy: req.body.sponsoredBy
+        
     })
 
     event.save(event)
