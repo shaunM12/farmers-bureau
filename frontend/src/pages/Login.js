@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {Link, useNavigate} from 'react-router-dom'
+import React from 'react';
+// import { useNavigate, Link } from 'react-router-dom'
+import { useState } from 'react'
 import axios from 'axios'
+
 import {
     FormSection,
     FormWrapper,
@@ -13,56 +15,41 @@ import {
     FormMessage,
     // LoginRedirect,
     // LoginMessage,
-} from '../styles/Register.style'
+} from '../styles/Login.style'
 
+const Login = () => {
 
-const Register = () => {
-
-    const [data, setData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-    })
-
+    const [data, setData] = useState({ email: "", password: ""})
     const [error, setError] = useState("")
-    const navigate = useNavigate()
-
 
     const handleChange = ({ currentTarget: input}) => {
         setData({...data, [input.name]: input.value})
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
         try {
-            const url = "http://localhost:8081/users"
-            const { data: res } = await axios.post(url, data)
-            navigate('/login')
-            console.log(res.message)
-            
+            const url = 'http://localhost:8081/auth'
+            const {data: res} = await axios.post(url, data)
+            localStorage.setItem("tokenAccess", res.data)
+            window.location="/"
         }
         catch (error) {
-            if (error.response && error.response.status >= 400 && error.response.status <= 500) 
-            {
-            setError(error.response.data.message)
+            if(error.response && error.response.status >= 400 && error.response.status <= 500) {
+                setError(error.response.data.message)
+            }
         }
     }
-}
+
     return (
         <FormSection>
             <FormContainer>
                 <FormRow>
                     <FormColumn small>
-                        <FormTitle>Register</FormTitle>
+                        <FormTitle>Login</FormTitle>
                         <FormWrapper onSubmit={handleSubmit}>
-                            <FormInput type="text" placeholder="First Name"
-                            name="firstName" onChange={handleChange} value={data.firstName} />
-                            <FormInput type="text" name="LastName" placeholder="Last name" onChange={handleChange} value={data.lastName} />
                             <FormInput type="text" name="email" placeholder="email" onChange={handleChange} value={data.email} />
                             <FormInput type="password" name="password" placeholder="password" onChange={handleChange} value={data.password} />
-                            <FormButton type="submit">Register</FormButton>
+                            <FormButton type="submit">Login</FormButton>
                         </FormWrapper>
                             {error && <FormMessage>{error}</FormMessage>}
                     </FormColumn>
@@ -76,7 +63,7 @@ const Register = () => {
                 </FormRow>
             </FormContainer>
         </FormSection>
-       
     )
 }
-export default Register
+
+export default Login
