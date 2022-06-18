@@ -12,7 +12,6 @@ const AddEvent = () => {
         month: "",
         day: "",
         description: "",
-        sponsoredBy: ""
     }
 
     const [event, setEvent] = useState(initialEventState)
@@ -37,7 +36,6 @@ const AddEvent = () => {
             month: event.month,
             day: event.day,
             description: event.description,
-            sponsoredBy: event.sponsoredBy
         }
         EventService.create(data) 
         .then(response => {
@@ -50,7 +48,6 @@ const AddEvent = () => {
                 month: response.data.month,
                 day: response.data.day,
                 description: response.data.description,
-                sponsoredBy: response.data.sponsoredBy
             })
             setSubmitted(true)
             console.log(response.data)
@@ -151,17 +148,6 @@ const AddEvent = () => {
                     defaultValue={event.description}
                     onChange={handleInputChange}
                     name="description"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="sponsoredBy">Sponsored By:</label>
-                    <input
-                    type="text"
-                    id="sponsoredBy"
-                    required
-                    defaultValue={event.sponsoredBy}
-                    onChange={handleInputChange}
-                    name="sponsoredBy"
                     />
                 </div>
                 </form>

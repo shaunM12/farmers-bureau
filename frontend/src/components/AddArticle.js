@@ -1,10 +1,13 @@
 import { mapToStyles } from "@popperjs/core/lib/modifiers/computeStyles";
 import { useEffect, useState } from "react";
 import FileBase64 from "react-file-base64";
+import { useNavigate } from "react-router";
 import { createArticle, getArticles } from "../functions";
 
 
 const AddArticle = () => {
+
+  const navigate = useNavigate()
   const [article, setArticle] = useState({
     id: null,
     title: "",
@@ -21,15 +24,9 @@ const AddArticle = () => {
     e.preventDefault();
     const result = await createArticle(article);
     setArticles(articles, result);
+    navigate('/articles')
   };
-//   const fetchData = async () => {
-//     const result = await getArticles();
-//     console.log("fetch data", result);
-//     setArticles(result);
-//   };
-//   useEffect(() => {
-//     fetchData();
-//   }, []);
+
   return (
     <div>
       <h1>Add a New Article</h1>
