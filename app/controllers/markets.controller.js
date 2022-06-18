@@ -2,15 +2,6 @@ const db = require('../models')
 const Markets = db.markets
 
 exports.findAll = async (req, res) => {
-    // console.log("finding markets")
-
-    // try {
-    //     const markets = await Markets.find()
-    //     res.status(200).json(article)
-    // }
-    // catch (error) {
-    //     res.status(404).json({message: error.message})
-    // }
     const where = req.query.where
 
     let find = where ? { where: { $regex: new RegExp(where), $options: 'i'}} : {}
