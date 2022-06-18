@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from './components/Register'
 import Login from './components/Login'
+
 import {CookiesProvider} from 'react-cookie'
 import ArticlesList from './components/ArticlesList'
 import EventList from "./components/EventList"
