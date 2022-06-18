@@ -27,6 +27,8 @@ const NavBar = () => {
                     <NavBarLink to="/articles">Articles</NavBarLink>
                     <NavBarLink to="/events">Events</NavBarLink>
                     <NavBarLink to="/addarticle">Add a New Article</NavBarLink>
+                    <NavBarLink to="/markets">Farmer's Market</NavBarLink>
+                    <NavBarLink to="/addmarket">Add a Farmer's Market</NavBarLink>
                 </NavBarLinkContainer>
                 <OpenLinksButton
                 onClick={() => {
