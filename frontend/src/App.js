@@ -12,14 +12,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* menu, search, logo in header */}
-        {/* <Navbar /> */}
-        {/* <RegisterForm /> */}
-        {/* <NavList /> */}
         <ResponsiveAppBar />
       </header>
-      {/* <body className="App-body">
-
-      </body> */}
       <Outlet />
       <div className="container">
 

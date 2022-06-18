@@ -4,8 +4,7 @@ const cors = require("cors")
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
-const multer = require('multer')
-const upload = multer({ dest: 'public/'})
+
 
 
 const app = express()
@@ -40,7 +39,6 @@ app.get("/", (req, res) => {
     res.json({Message: "Welcome to Farm & Food Magazine"})
 });
 
-// require('./routes/user.routes')(app)
 require('./routes/article.routes')(app)
 require('./routes/event.routes')(app)
 require('./routes/auth.routes')

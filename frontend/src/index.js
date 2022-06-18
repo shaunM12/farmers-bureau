@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from './components/Register'
-import Registration from './components/Registration'
 import Login from './components/Login'
 import {CookiesProvider} from 'react-cookie'
 import ArticlesList from './components/ArticlesList'
@@ -24,7 +23,6 @@ root.render(
     <Route path="/" element={<App />} />
     <Route path='/' element={ <Home /> } />
     <Route path="register" element={<Register />} />
-    <Route path="registration" element={<Registration />} />
     <Route path='/login' element={<Login />} />
     <Route path='/articles' element={<ArticlesList />} />
     <Route path="/events" element={< EventList />} />
