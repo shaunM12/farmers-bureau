@@ -15,7 +15,6 @@ const ArticlesList = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
 
-  const navigate = useNavigate();
 
   const fetchData = async () => {
     const result = await getArticles();
@@ -41,17 +40,21 @@ const ArticlesList = () => {
           {articles &&
             articles.map((article, index) => (
                 <Link to={'/articles/' + article._id}>
-              <div className={"card"}
-              key={article._id}
+              <div className="card"
+              key={articles._id}
               onClick={() => setActiveArticle(article, index)}>
                 <img style={{ width: "20%" }} src={article.image} />
+                <br />
+                <br />
                 <div className="card-content">
                   <div>
                     <span className="card">{article.title}</span>
                   </div>
+                  <br />
                   <div>
                     <span className="card-content">{article.author}</span>
                   </div>
+                  <br />
                   <div>
                     <span className="card-content">{article.snippet}</span>
                   </div>

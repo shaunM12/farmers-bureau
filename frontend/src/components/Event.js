@@ -3,6 +3,7 @@ import {useParams, useNavigate } from 'react-router-dom'
 import EventService from '../services/EventService'
 
 
+
 const Event = props => {
     const { id } = useParams()
     let navigate = useNavigate()
@@ -10,8 +11,10 @@ const Event = props => {
     const initialEventState = {
         id: null,
         name: "",
-        time: "",
-        date: "",
+        start: "",
+        end: "",
+        month: "",
+        day: "",
         description: "",
         sponsoredBy: ""
     }
@@ -49,6 +52,7 @@ const Event = props => {
         .catch(err => {
             console.log(err)
         })
+        navigate('/events')
     }
 
     const deleteEvent = () => {
@@ -69,92 +73,92 @@ const Event = props => {
                 <div>
                     <h2>Event: </h2>
                     <form>
-                        <div>
-                            <label htmlFor="eventName">Event Name</label>
+                        <div className="form-group">
+                            <label htmlFor="name">Event Name</label>
                             <input 
                             type="text"
-                            className="update-form"
-                            id="eventName"
-                            name="eventName"
+                            className="form-control"
+                            id="name"
+                            name="name"
                             defaultValue={currentEvent.name}
                             onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label htmlFor="eventLocation">Event Location:</label>
+                            <label htmlFor="location">Event Location:</label>
                             <input 
                             type="text"
                             className="update-form"
-                            id="eventLocation"
-                            name="eventLocation"
+                            id="location"
+                            name="location"
                             defaultValue={currentEvent.location}
                             onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label htmlFor="eventTime">Start Time:</label>
+                            <label htmlFor="start">Start Time:</label>
                             <input 
                             type="text"
                             className="update-form"
-                            id="eventTime"
-                            name="eventTime"
-                            defaultValue={currentEvent.startTime}
+                            id="start"
+                            name="start"
+                            defaultValue={currentEvent.start}
                             onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label htmlFor="eventTime">End Time:</label>
+                            <label htmlFor="end">End Time:</label>
                             <input 
                             type="text"
                             className="update-form"
-                            id="eventTime"
-                            name="eventTime"
-                            defaultValue={currentEvent.endTime}
-                            onChange={handleInputChange}
-                            />
-                        </div>
-                        
-                        <div>
-                            <label htmlFor="eventDate">Month:</label>
-                            <input 
-                            type="text"
-                            className="update-form"
-                            id="eventDate"
-                            name="eventDate"
-                            defaultValue={currentEvent.dateMonth}
-                            onChange={handleInputChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="eventDate">Day:</label>
-                            <input 
-                            type="text"
-                            className="update-form"
-                            id="eventDate"
-                            name="eventDate"
-                            defaultValue={currentEvent.dateDay}
+                            id="end"
+                            name="end"
+                            defaultValue={currentEvent.end}
                             onChange={handleInputChange}
                             />
                         </div>
                         
                         <div>
-                            <label htmlFor="eventDescription" >Event Description:</label>
+                            <label htmlFor="month">Month:</label>
                             <input 
                             type="text"
                             className="update-form"
-                            id="eventDescription"
-                            name="eventDescription"
+                            id="month"
+                            name="month"
+                            defaultValue={currentEvent.month}
+                            onChange={handleInputChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="day">Day:</label>
+                            <input 
+                            type="text"
+                            className="update-form"
+                            id="day"
+                            name="day"
+                            defaultValue={currentEvent.day}
+                            onChange={handleInputChange}
+                            />
+                        </div>
+                        
+                        <div>
+                            <label htmlFor="description" >Event Description:</label>
+                            <input 
+                            type="text"
+                            className="update-form"
+                            id="description"
+                            name="description"
                             defaultValue={currentEvent.description}
                             onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label htmlFor="eventSponsoredBy">Event Sponsored By:</label>
+                            <label htmlFor="sponsoredBy">Event Sponsored By:</label>
                             <input 
                             type="text"
                             className="update-form"
-                            id="eventSponsoredBy"
-                            name="eventSponsoredBy"
+                            id="sponsoredBy"
+                            name="sponsoredBy"
                             defaultValue={currentEvent.sponsoredBy}
                             onChange={handleInputChange}
                             />

@@ -7,10 +7,10 @@ const AddEvent = () => {
         id: null,
         name: "",
         location: "",
-        startTime: "",
-        endTime: "",
-        dateMonth: "",
-        dateDay: "",
+        start: "",
+        end: "",
+        month: "",
+        day: "",
         description: "",
         sponsoredBy: ""
     }
@@ -32,10 +32,10 @@ const AddEvent = () => {
         const data = {
             name: event.name,
             location: event.location,
-            startTime: event.startTime,
-            endTime: event.endTime,
-            dateMonth: event.dateMonth,
-            eventDay: event.dateDay,
+            start: event.start,
+            end: event.end,
+            month: event.month,
+            day: event.day,
             description: event.description,
             sponsoredBy: event.sponsoredBy
         }
@@ -45,10 +45,10 @@ const AddEvent = () => {
                 id: response.data.id,
                 name: response.data.name,
                 location: response.data.location,
-                startTime: response.data.startTime,
-                endTime: response.data.endTime,
-                dateMonth: response.data.dateMonth,
-                dateDay: response.data.dateDay,
+                start: response.data.start,
+                end: response.data.end,
+                month: response.data.month,
+                day: response.data.day,
                 description: response.data.description,
                 sponsoredBy: response.data.sponsoredBy
             })
@@ -92,54 +92,54 @@ const AddEvent = () => {
                     type="text"
                     id="location"
                     required
-                    defaultValue={event.Location}
+                    defaultValue={event.location}
                     onChange={handleInputChange}
                     name="location"
                     />
                 </div>
                 <div>
-                    <label htmlFor="startTime">Start:</label>
+                    <label htmlFor="start">Start:</label>
                     <input
                     type="text"
-                    id="startTime"
+                    id="start"
                     required
-                    defaultValue={event.startTime}
+                    defaultValue={event.start}
                     onChange={handleInputChange}
-                    name="startTime"
+                    name="start"
                     />
                 </div>
                 <div>
-                    <label htmlFor="endTime">End:</label>
+                    <label htmlFor="end">End:</label>
                     <input
                     type="text"
-                    id="endTime"
+                    id="end"
                     required
-                    defaultValue={event.endTime}
+                    defaultValue={event.end}
                     onChange={handleInputChange}
-                    name="endTime"
+                    name="end"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="dateMonth">Month:</label>
+                    <label htmlFor="month">Month:</label>
                     <input
                     type="text"
-                    id="dateMonth"
+                    id="month"
                     required
-                    defaultValue={event.dateMonth}
+                    defaultValue={event.month}
                     onChange={handleInputChange}
-                    name="dateMonth"
+                    name="month"
                     />
                 </div>
                 <div>
-                    <label htmlFor="dateDay">Day:</label>
+                    <label htmlFor="day">Day:</label>
                     <input
                     type="text"
-                    id="dateDay"
+                    id="day"
                     required
-                    defaultValue={event.eventDay}
+                    defaultValue={event.day}
                     onChange={handleInputChange}
-                    name="dateDay"
+                    name="day"
                     />
                 </div>
                 <div>
