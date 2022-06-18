@@ -42,6 +42,7 @@ app.get("/", (req, res) => {
 require('./routes/article.routes')(app)
 require('./routes/event.routes')(app)
 require('./routes/auth.routes')
+require('./routes/markets.routes')(app)
 
 app.use('/users', userRoutes)
 app.use('/auth', authRoutes)

@@ -14,7 +14,13 @@ import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
 import Home from './components/Home'
 import Article from './components/Article'
+
+import AddMarket from './components/AddMarket';
+import MarketList from './components/MarketsList'
 import Navbar from './components/Navbar'
+
+
+
 
 
 
@@ -35,6 +41,8 @@ root.render(
     <Route path='/addevent' element={< AddEvent />} />
     <Route path='/addarticle' element={< AddArticle />} />
     <Route path="articles/:id" element={< Article />} />
+    <Route path="/addmarket" element={<AddMarket />} />
+    <Route path="/markets" element={<MarketList />} />
   </Routes>
 
   </BrowserRouter>
