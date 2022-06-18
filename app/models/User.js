@@ -34,29 +34,3 @@ const validate = (data) => {
 module.exports = { User, validate}
 
 
-// module.exports = mongoose => {
-//     var schema = mongoose.Schema(
-//         {
-//             // username: {
-//             //     type: String,
-//             //     required: true,
-                
-//             // },
-//             email: {
-//                 type: String,
-//                 required: true,
-               
-//             },
-//             password: {
-//                 type: String,
-              
-//             },
-//             // administrator: {
-//             //     type: Boolean
-                
-//             // },
-//         }
-//     )
-//     const User = mongoose.model("user", schema)
-//     return User
-// }

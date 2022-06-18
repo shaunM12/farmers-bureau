@@ -25,15 +25,6 @@ const Register = () => {
         try {
             const url = "http://localhost:8081/users"
             const { data: res } = await axios.post(url, data)
-            // return fetch('http://localhost:8081/user', {
-            //     method: 'POST',
-            //     body: JSON.stringify(data),
-            //     headers: {
-            //         'Content-Type' : 'application/json'
-            //     }
-            // })
-            // .then(res => res.json())
-            // .then(data => console.log(data))
             navigate('/login')
             console.log(res.message)
             
@@ -60,8 +51,7 @@ const Register = () => {
             name="firstName"  onChange={handleChange} value={data.firstName}/>
             <input type="text" name="lastName" placeholder="last name" onChange={handleChange} value={data.lastName}/>
             <input type="text" name="email" placeholder="email" onChange={handleChange} value={data.email}/>
-            <input type="text" name="password" placeholder="password" onChange={handleChange} value={data.password}/>
-            {/* <input type="text" name="repeatPassword" placeholder="repeat password" onChange={handleChange} value={data.repeatPassword}/> */}
+            <input type="password" name="password" placeholder="password" onChange={handleChange} value={data.password}/>
             {error && <div>{error}</div>}
             <button type="submit">Register</button>
         </form>

@@ -61,10 +61,6 @@ const ArticlesList = () => {
             ))}
         </div>
         <div>
-            {/* <Link 
-            to={"/article"/ + currentArticle._id}>
-            <button>Read Full Article</button>
-            </Link> */}
         </div>
       </div>
     </div>

@@ -43,28 +43,3 @@ exports.create =  async (req, res,) => {
             }) 
         }
     }
-
-// exports.findOne =  token, async  (req, res, next) =>  {
-//     console.log(3333, req.body)
-//     const id = req.params.id
-//     const email = req.params.email
-    
-//     // console.log("id", id)
-//     const cookie = res.cookie
-//     console.log(5555, cookie)
-//     console.log(req.body)
-
-//     User.findOne(email)
-//     .then(data => {
-//         console.log(email)
-//         if(!data) {
-//             res.send("Could not find user with id ")
-//         } else {
-//             console.log(data)
-//             res.send(data)
-//         }
-//     })
-//     .catch(err => {
-//         res.send( "Error retrieving user")
-//     })
-// }
