@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import RegisterInputs from './RegisterInputs';
 // import userLogin from '../services/LoginService';
 import userService from '../services/UserService'
-import Home from './Home'
+import Home from '../pages/Home'
 import { useState } from 'react'
 import {useCookies } from 'react-cookie'
 import axios from 'axios'

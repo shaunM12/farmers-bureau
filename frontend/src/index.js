@@ -13,14 +13,18 @@ import EventList from "./components/EventList"
 import Event from './components/Event'
 import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
+import NavBar from './components/NavBar'
+import Home from './pages/Home'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CookiesProvider>
   <BrowserRouter>
+    <NavBar />
   <Routes>
-    <Route path="/" element={<App />} />
+    <Route path="/" element={<Home />} />
     
     <Route path="register" element={<Register />} />
     <Route path="registration" element={<Registration />} />

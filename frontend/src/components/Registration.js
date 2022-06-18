@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import UserService from '../services/UserService'
 import RegisterInputs from './RegisterInputs'
 import { useNavigate } from 'react-router-dom'
-import AppBar from './AppBar'
+
 
 const Registration = () => {
   const navigate = useNavigate()
@@ -69,7 +69,7 @@ const Registration = () => {
 
   return (
     <div>
-      <AppBar />
+
       <h1>Please Register</h1>
       <Formik
         initialValues={{

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link, Routes, Route, Outlet}  from 'react-router-dom'
 import Register from './components/Register'
-import ResponsiveAppBar from './components/AppBar'
-import Home from './components/Home';
+
+import Home from './pages/Home';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         {/* <Navbar /> */}
         {/* <RegisterForm /> */}
         {/* <NavList /> */}
-        <ResponsiveAppBar />
+
       </header>
       {/* <body className="App-body">
 
