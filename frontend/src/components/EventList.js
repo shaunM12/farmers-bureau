@@ -120,12 +120,6 @@ const EventList = () => {
                       </label>{" "}
                       {currentEvent.description}
                   </div>
-                  <div>
-                      <label>
-                          <strong>Sponsored By:</strong>
-                      </label>{" "}
-                      {currentEvent.sponsoredBy}
-                  </div>
                   <Link 
                   to={'/events/' + currentEvent._id}>
                       <button>Update Event</button>
