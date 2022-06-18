@@ -19,7 +19,6 @@ import MarketList from './components/MarketsList'
 import Navbar from './components/Navbar'
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CookiesProvider>
