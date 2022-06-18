@@ -3,7 +3,7 @@ const Event = db.events
 
 
 exports.create = (req, res) => {
-    const {name, location, startTime, endTime, dateMonth, dateDay, description, sponsoredBy} = req.body
+    const {name, location, start, end, month, day, description, sponsoredBy} = req.body
     if(!req.body) {
         res.send('Please fill in the name of event')
         return
@@ -12,10 +12,10 @@ exports.create = (req, res) => {
     const event = new Event({
         name: req.body.name,
         location: req.body.location,
-        startTime: req.body.startTime,
-        endTime: req.body.endTime,
-        dateMonth: req.body.dateMonth,
-        dateDay: req.body.dateDay,
+        start: req.body.start,
+        end: req.body.end,
+        month: req.body.month,
+        day: req.body.day,
         description: req.body.description,
         sponsoredBy: req.body.sponsoredBy
     })
@@ -65,17 +65,17 @@ exports.update = (req, res) => {
         return res.send("Please fill in required fields")
     }
     const id = req.params.id
-
+    console.log("req.body for update", req.body)
     Event.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
     .then(data => {
         if(!data) {
             res.send("Couldn't update your event")
         } else {
-            res.send(data)
+            res.send({message: "Event has been updated"})
         }
     })
     .catch(err => {
-        res.send('Event has been updated')
+        res.send('Error trying to update')
     })
 }
 

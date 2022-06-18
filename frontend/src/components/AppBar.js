@@ -97,9 +97,6 @@ const ResponsiveAppBar = () => {
                     <MenuItem key={"register"} onClick={handleCloseNavMenu}>
                     <Link to='/register'>Register</Link>
                     </MenuItem>
-                    <MenuItem key={"registration"} onClick={handleCloseNavMenu}>
-                    <Link to='/registration'>Registration</Link>
-                    </MenuItem>
                     <MenuItem key={"login"} onClick={handleCloseNavMenu}>
                     <Link to='/login'>Login</Link>
                     </MenuItem>

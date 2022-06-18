@@ -14,12 +14,15 @@ import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
 import Home from './components/Home'
 import Article from './components/Article'
+import AppBar from './components/AppBar'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CookiesProvider>
+  
   <BrowserRouter>
+  <AppBar />
   <Routes>
     <Route path="/" element={<App />} />
     <Route path='/' element={ <Home /> } />

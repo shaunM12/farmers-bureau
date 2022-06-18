@@ -92,20 +92,27 @@ const EventList = () => {
                   </div>
                   <div>
                       <label>
-                          <strong>Time:</strong>
+                          <strong>Start:</strong>
                       </label>{" "}
-                      {currentEvent.startTime}
-                      {" "}
-                      {currentEvent.endTime}
+                      {currentEvent.start}
                   </div>
                   <div>
                       <label>
-                          <strong>Date:</strong>
+                          <strong>End:</strong>
                       </label>{" "}
-                      {currentEvent.dateMonth}
-                      {" "}
-                      {currentEvent.dateDay}
-                      
+                      {currentEvent.end}
+                  </div>
+                  <div>
+                      <label>
+                          <strong>Month:</strong>
+                      </label>{" "}
+                      {currentEvent.month}
+                  </div>
+                  <div>
+                      <label>
+                          <strong>Day:</strong>
+                      </label>{" "}
+                      {currentEvent.day}
                   </div>
                   <div>
                       <label>
