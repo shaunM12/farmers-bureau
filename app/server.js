@@ -10,18 +10,15 @@ const upload = multer({ dest: 'public/'})
 
 const app = express()
 
-// var corsOptions = {
-//     origin: "http://localhost:8081"
-// };
-
-app.use('/public',express.static('public'))
+const userRoutes = require('./routes/users')
+const authRoutes = require('./routes/auth')
 
 app.use(cors())
 
 // parse requests of content-type - application/json
-app.use(express.json())
+app.use(express.json({limit: "10000kb", extended: true}))
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ limit: "10000kb", extended: true }))
 
 
 
@@ -43,21 +40,13 @@ app.get("/", (req, res) => {
     res.json({Message: "Welcome to Farm & Food Magazine"})
 });
 
-require('./routes/user.routes')(app)
+// require('./routes/user.routes')(app)
 require('./routes/article.routes')(app)
 require('./routes/event.routes')(app)
+require('./routes/auth.routes')
 
-
-// app.get('/public/:imageName', (req, res) => {
-//     const imageName = req.params.imageName
-//     const readStream = fs.createReadStream(`public/${imageName}`)
-//     readStream.pip(res)
-// })
-// app.post('/articles', upload.single('image'), (req, res) => {
-//     const imagePath = req.file.path
-//     // const description = req.body.description
-//     res.send({ imagePath})
-// })
+app.use('/users', userRoutes)
+app.use('/auth', authRoutes)
 
 app.listen(8081, () => {
     console.log('The server is running on http://localhost:8081')

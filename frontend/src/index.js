@@ -13,6 +13,8 @@ import EventList from "./components/EventList"
 import Event from './components/Event'
 import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
+import Home from './components/Home'
+import Article from './components/Article'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +23,7 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<App />} />
-    
+    <Route path='/' element={ <Home /> } />
     <Route path="register" element={<Register />} />
     <Route path="registration" element={<Registration />} />
 
@@ -31,6 +33,7 @@ root.render(
     <Route path="/events/:id" element={<Event />} />
     <Route path='/addevent' element={< AddEvent />} />
     <Route path='/addarticle' element={< AddArticle />} />
+    <Route path="articles/:id" element={< Article />} />
   </Routes>
 
   </BrowserRouter>

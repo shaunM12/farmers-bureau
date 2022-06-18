@@ -19,6 +19,7 @@ import Login from './Login'
 import {Link } from 'react-router-dom'
 import Events from '../components/EventList'
 import AddArticle from '../components/AddArticle'
+import Article from '../components/Article'
 
 const pages = ['Register', 'Home', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -94,6 +95,9 @@ const ResponsiveAppBar = () => {
                     display: { xs: 'block', md: 'none' },
                 }}
                 >
+                    <MenuItem key={"register"} onClick={handleCloseNavMenu}>
+                    <Link to='/register'>Register</Link>
+                    </MenuItem>
                     <MenuItem key={"registration"} onClick={handleCloseNavMenu}>
                     <Link to='/registration'>Registration</Link>
                     </MenuItem>
@@ -110,7 +114,9 @@ const ResponsiveAppBar = () => {
                     <Link to='/addarticle'>Add A New Article</Link>
 
                     </MenuItem>
-                
+                    <MenuItem key={"article"} onClick={handleCloseNavMenu}>
+                    <Link to='/article'> Article</Link>
+                    </MenuItem>
                 </Menu>
             </Box>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
