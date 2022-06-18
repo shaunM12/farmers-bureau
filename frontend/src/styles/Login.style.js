@@ -23,6 +23,7 @@ export const FormContainer = styled.div`
     flex-direction: coloumn;
     justify-content: center;
     margin: 0 auto;
+    
 `;
 
 export const FormColumn = styled.div`
@@ -65,6 +66,9 @@ export const FormInputRow = styled.div`
 		margin-top: 0.5rem;
 		color: #f00e0e;
 	}
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 5px;
 `;
 
 

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from './pages/Register'
-import Login from './components/Login'
+import Login from './pages/Login'
 
 import {CookiesProvider} from 'react-cookie'
 import ArticlesList from './components/ArticlesList'
@@ -15,6 +15,7 @@ import AddArticle from './components/AddArticle'
 import Home from './components/Home'
 import Article from './components/Article'
 import Navbar from './components/Navbar'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
