@@ -6,6 +6,8 @@ module.exports = app => {
 
     router.get('/', markets.findAll)
 
+    router.get('/:id', markets.findOne)
+
     router.delete('/:id', markets.delete)
 
     router.put('/:id', markets.update)

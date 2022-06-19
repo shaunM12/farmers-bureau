@@ -73,3 +73,54 @@ exports.update = (req, res) => {
         res.send({message: "Error trying to update"})
     })
 }
+
+exports.findOne = (req, res) => {
+    const id = req.params.id
+
+    Markets.findById(id).then(data => {
+        console.log(id)
+        if(!data) {
+            res.send({message: "Couldn't find that farmer's market"})
+        } else {
+            res.send(data)
+        }
+    })
+    .catch(err => {
+        res.send("There was an error trying to find this farmer's market")
+    })
+}
+
+exports.update = (req, res) => {
+    if(!req.body) {
+        return res.send("Please fill in required fields")
+    }
+    const id = req.params.id
+    console.log("req.body for update", req.body)
+    Markets.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
+    .then(data => {
+        if(!data) {
+            res.send("Couldn't update farmer's market")
+        } else {
+            res.send({message: "This Farmer's market has been updated"})
+        }
+    })
+    .catch(err => {
+        res.send('Error trying to update')
+    })
+}
+
+exports.delete = (req, res) => {
+    const id = req.params.id
+
+    Markets.findByIdAndDelete(id, {useFindAndModify: false})
+    .then(data => {
+        if(!data) {
+            res.send("Sorry couldn't delete this farmer's market")
+        } else {
+            res.send(data)
+        }
+    })
+    .catch(err => {
+        res.send("Sorry there was and error trying to delete this farmer's market")
+    })
+}
