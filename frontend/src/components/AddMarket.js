@@ -26,7 +26,7 @@ const AddMarket = () => {
     const newMarket = () => {
         setMarket(initialMarketState)
         setSubmitted(false)
-        navigate('/')
+        navigate('/AddMarket')
     }
 
     const saveMarket = () => {
@@ -60,7 +60,7 @@ const AddMarket = () => {
         <div className="submit-form">
             {submitted ? (
                 <div> 
-                    <h3>You have added a new farmer's market</h3>
+                    <h3>THANK YOU FOR SUBMITTING A NEW FARMER'S MARKET</h3>
                     <button onClick={newMarket}>Add Another</button>
                     </div>
             ) : (

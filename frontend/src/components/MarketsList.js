@@ -80,8 +80,6 @@ const MarketsList = () => {
            <button>Update Farmer's Market</button>
            </Link>
            </div>
-
-
 ) : (
 
     <div>

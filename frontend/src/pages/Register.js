@@ -59,7 +59,8 @@ const Register = () => {
                         <FormWrapper onSubmit={handleSubmit}>
                             <FormInput type="text" placeholder="First Name"
                             name="firstName" onChange={handleChange} value={data.firstName} />
-                            <FormInput type="text" name="LastName" placeholder="Last name" onChange={handleChange} value={data.lastName} />
+                             <FormInput type="text" placeholder="Last Name"
+                            name="lastName" onChange={handleChange} value={data.lastName} />
                             <FormInput type="text" name="email" placeholder="email" onChange={handleChange} value={data.email} />
                             <FormInput type="password" name="password" placeholder="password" onChange={handleChange} value={data.password} />
                             <FormButton type="submit">Register</FormButton>
