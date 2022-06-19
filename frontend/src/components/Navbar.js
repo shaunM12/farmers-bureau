@@ -15,6 +15,19 @@ import LogoImg from '../images/HFF.png'
 
 const NavBar = () => {
   const [extendNavBar, setExtendNavBar] = useState(false)
+
+  const handleLogout = () => {
+    localStorage.removeItem('tokenAccess')
+    window.location.reload()
+  }
+
+  var logButton = ""
+  if(localStorage.length == 0) { 
+    logButton = <NavBarLink to="/login">Login</NavBarLink>
+  } else {
+    logButton = <NavBarLink to="/" onClick={handleLogout}>Logout</NavBarLink>
+  }
+
   return (
     <NavBarContainer extendNavBar={extendNavBar}>
       <NavbarInnerContainer>
@@ -24,9 +37,10 @@ const NavBar = () => {
 
         <RightContainer>
           <NavBarLinkContainer>
+            {/* <NavBarLink to="/login">Login</NavBarLink> */}
+            {logButton}
             <NavBarLink to="/articles">Home</NavBarLink>
             <NavBarLink to="/register">Register</NavBarLink>
-            <NavBarLink to="/login">Login</NavBarLink>
             <NavBarLink to="/events">Events</NavBarLink>
             <NavBarLink to="/addarticle">Add a New Article</NavBarLink>
             <NavBarLink to="/markets">Farmer's Market</NavBarLink>

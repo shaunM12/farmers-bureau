@@ -1,7 +1,7 @@
 import { Navigate, Route, Outlet } from 'react-router-dom'
 import {useAuth} from '../auth' 
 import AddArticle from './AddArticle'
-import Login from '../pages/Login'
+import Login from './Login'
 
 const ProtectedRoute = () => {
     const auth = useAuth()

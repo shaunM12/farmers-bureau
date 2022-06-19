@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Register from './pages/Register'
-import Login from './pages/Login'
-
 import {CookiesProvider} from 'react-cookie'
+
+import Register from './components/Register'
+import Login from './components/Login'
+import Logout from './components/Logout';
 import ArticlesList from './components/ArticlesList'
 import EventList from "./components/EventList"
 import Event from './components/Event'
@@ -36,6 +37,7 @@ root.render(
     {/* <Route path='/' element={ <Home /> } /> */}
     <Route path="register" element={<Register />} />
     <Route path='/login' element={<Login />} />
+    <Route path='/logout' element={<Logout />} />
     <Route path='/articles' element={<ArticlesList />} />
     <Route path="/events" element={< EventList />} />
     <Route path="/events/:id" element={<Event />} />

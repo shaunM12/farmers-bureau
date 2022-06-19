@@ -1,24 +1,30 @@
 const Logout = () => {
 
-    const handleLogout = () => {
-        localStorage.removeItem("tokenAccess")
-        window.location.reload()
-    }
+  const handleLogout = () => {
+    localStorage.removeItem('tokenAccess')
+    window.location.reload()
+  }
+
+  // console.log(localStorage)
+  if(localStorage.length == 0){
     return (
-        <div>
+      <div>
+        <h1>Click Here to Log In</h1>
+      </div>
+    )} else {
+        return(
+        <>
         <h1>Click here to Log Out</h1>
         <button onClick={handleLogout}>Log Out</button>
-        </div>
-    )
+        </>
+        )}
 }
 
 export default Logout
 
-
 // import {useNavigate} from 'react-router-dom'
 // import {useState} from 'react'
 // import {useAuth} from '../auth'
-
 
 // const [isLoggedIn, setIsLoggedIn] = useState(null)
 
@@ -33,10 +39,12 @@ export default Logout
 //     localStorage.removeItem("tokenAccess")
 //     navigate('/articles')
 // }
-{/* <div>
+{
+  /* <div>
             {isLoggedIn ? (
                     <button onClick={login}>Login</button>
                 ) : (
                     <button onClick={logout}>Logout</button>
                 )}
-        </div> */}
+        </div> */
+}
