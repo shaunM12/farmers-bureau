@@ -59,11 +59,11 @@ const Event = props => {
         EventService.remove(currentEvent._id)
         .then(response => {
             console.log(response.data)
-            navigate('/events')
         })
         .catch(err => {
             console.log(err)
         })
+        navigate('/events')
     }
 
 

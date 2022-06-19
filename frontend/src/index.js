@@ -14,11 +14,12 @@ import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
 import Home from './components/Home'
 import Article from './components/Article'
-
+import Market from './components/Market';
 import AddMarket from './components/AddMarket';
 import MarketList from './components/MarketsList'
 import Navbar from './components/Navbar'
-
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './auth';
 
 
 
@@ -30,21 +31,23 @@ root.render(
   
   <BrowserRouter>
     <Navbar />
+    <AuthProvider>
   <Routes>
     <Route path="/" element={<App />} />
-    <Route path='/' element={ <Home /> } />
+    {/* <Route path='/' element={ <Home /> } /> */}
     <Route path="register" element={<Register />} />
     <Route path='/login' element={<Login />} />
     <Route path='/articles' element={<ArticlesList />} />
     <Route path="/events" element={< EventList />} />
     <Route path="/events/:id" element={<Event />} />
     <Route path='/addevent' element={< AddEvent />} />
-    <Route path='/addarticle' element={< AddArticle />} />
+    <Route path='/addarticle' element={< ProtectedRoute />} />
     <Route path="articles/:id" element={< Article />} />
     <Route path="/addmarket" element={<AddMarket />} />
     <Route path="/markets" element={<MarketList />} />
+    <Route path="/markets/:id" element={<Market />} />
   </Routes>
-
+  </AuthProvider>
   </BrowserRouter>
   </CookiesProvider>
 

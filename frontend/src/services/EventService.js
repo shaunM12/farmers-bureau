@@ -26,10 +26,6 @@ const create = data => {
 }
 
 
-
-
-
-
 const EventService = {
     getAll,
     findByEvent,
