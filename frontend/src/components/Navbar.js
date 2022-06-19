@@ -16,11 +16,13 @@ import LogoImg from '../images/HFF.png'
 const NavBar = () => {
   const [extendNavBar, setExtendNavBar] = useState(false)
 
+  //to erase the login taken
   const handleLogout = () => {
     localStorage.removeItem('tokenAccess')
     window.location.reload()
   }
 
+  //to switch the "login" and "logout" buttons depending on the logged status
   var logButton = ""
   if(localStorage.length == 0) { 
     logButton = <NavBarLink to="/login">Login</NavBarLink>
