@@ -20,8 +20,7 @@ import MarketList from './components/MarketsList'
 import Navbar from './components/Navbar'
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './auth';
-
-
+import Footer from './components/Footer';
 
 
 
@@ -49,6 +48,7 @@ root.render(
   </Routes>
   </AuthProvider>
   </BrowserRouter>
+  <Footer></Footer>
   </CookiesProvider>
 
 );
