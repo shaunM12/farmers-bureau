@@ -7,7 +7,6 @@ import {CookiesProvider} from 'react-cookie'
 
 import Register from './components/Register'
 import Login from './components/Login'
-import Logout from './components/Logout';
 import ArticlesList from './components/ArticlesList'
 import EventList from "./components/EventList"
 import Event from './components/Event'
@@ -37,7 +36,6 @@ root.render(
     {/* <Route path='/' element={ <Home /> } /> */}
     <Route path="register" element={<Register />} />
     <Route path='/login' element={<Login />} />
-    <Route path='/logout' element={<Logout />} />
     <Route path='/articles' element={<ArticlesList />} />
     <Route path="/events" element={< EventList />} />
     <Route path="/events/:id" element={<Event />} />
