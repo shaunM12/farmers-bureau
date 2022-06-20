@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const AddMarketContainer = styled.div `
-    width: 100%
-`
-export const AddMarketButton = styled.button `
+
+export const AddArticleContainer = styled.div `
+width: 100%`
+
+export const AddArticleButton = styled.button `
     // display: flex;
     // justify-content: center;
     // flex-direction: column;
@@ -15,10 +16,13 @@ export const Header = styled.h1 `
     color: green;
     font-weight: 600;
 `
-export const AddMarketForm = styled.form`
+export const AddArticleForm = styled.form`
     display: flex;
+    flex-direction: column;
 `
 export const AddButtonContainer = styled.div `
     display: flex;
+    
     justify-content: center;
+    
 `

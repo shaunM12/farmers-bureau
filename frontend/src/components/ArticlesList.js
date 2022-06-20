@@ -45,7 +45,7 @@ const ArticlesList = () => {
       <CssBaseline />
       <Container maxWidth="md" display="inline-flex">
         <Box sx={{height: '100vh'}} />
-    {/* <div className="container"> */}
+    <div className="container">
       <div className="cardContainer">
         <h1>CURRENT PUBLICATIONS</h1>
         <br />
@@ -79,7 +79,7 @@ const ArticlesList = () => {
         <div>
         </div>
       </div>
-    {/* </div> */}
+    </div>
     </Container>
     </React.Fragment>
   );
