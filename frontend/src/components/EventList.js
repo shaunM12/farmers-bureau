@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EventService from "../services/EventService";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import '../styles/EventList.style.css'
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -53,13 +54,13 @@ const EventList = () => {
   };
 
   return (
-    <div>
-      <button className="add-event" type="button" onClick={navigateAddEvent}>
+    <div className="container">
+      <button className="add" type="button" onClick={navigateAddEvent}>
         {" "}
         Add Event{" "}
       </button>
-      <div>
-        <h2>List Of Upcoming Events </h2>
+      <div className="eventContainer">
+        <h2>Upcoming Events </h2>
         <ul className="list">
           {events &&
             events.map((event, index) => (
@@ -75,7 +76,8 @@ const EventList = () => {
             ))}
         </ul>
       </div>
-      <div>
+      <br />
+      <div className="currentContainer">
         {currentEvent ? (
           <div>
             <h4>Event</h4>
