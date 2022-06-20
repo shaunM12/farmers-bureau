@@ -21,6 +21,7 @@ import Navbar from './components/Navbar'
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './auth';
 import Footer from './components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

@@ -5,7 +5,7 @@ export const FormSection = styled.div`
     justify-content: center;
     align-items: center;
     height:100vh; 
-    margin-top: 7rem;
+
 `;
 
 export const FormTitle = styled.h1`
