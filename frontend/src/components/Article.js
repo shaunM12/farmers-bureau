@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getArticle } from "../functions";
 import ArticleService from "../services/ArticleService";
+import '../styles/Article.style.css'
 
 const Article = (props) => {
   const { id } = useParams();
@@ -31,25 +32,25 @@ const Article = (props) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="conatiner">
       {currentArticle ? (
-        <div className="card" key={currentArticle._id}>
-          <span className="card">
-            <strong>{currentArticle.title}</strong>
-          </span>
-          <br />
-          <br />
-          <img style={{ width: "70%" }} src={currentArticle.image} />
+        <div className="acard" key={currentArticle._id}>
+          
+            <h1>{currentArticle.title}</h1>
+         
+          
+          
+          <img src={currentArticle.image} />
           <div className="card-content">
             <div>
-              <div></div>
+            <br />
               <div>
-                <span className="card-content">{currentArticle.author}</span>
+                <span className="aauthor">{currentArticle.author}</span>
               </div>
               <br />
               <br />
               <div>
-                <span className="card-content">{currentArticle.content}</span>
+                <span className="acontent">{currentArticle.content}</span>
               </div>
             </div>
           </div>

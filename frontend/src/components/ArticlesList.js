@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { getArticles } from "../functions";
+import '../styles/ArticlesList.style.css'
 
 const ArticlesList = () => {
   const [article, setArticle] = useState({
@@ -33,30 +34,31 @@ const ArticlesList = () => {
   }, []);
 
   return (
-    <div>
-      <div className="col-md-6">
+    <div className="container">
+      <div className="cardContainer">
         <h1>CURRENT PUBLICATIONS</h1>
-        <div>
+        <br />
+        <div className="articles">
           {articles &&
             articles.map((article, index) => (
                 <Link to={'/articles/' + article._id}>
               <div className="card"
               key={articles._id}
               onClick={() => setActiveArticle(article, index)}>
-                <img style={{ width: "20%" }} src={article.image} />
-                <br />
-                <br />
-                <div className="card-content">
-                  <div>
-                    <span className="card">{article.title}</span>
+                <img src={article.image} />
+              <br />
+            
+                <div className="content">
+                  <div className="title">
+                   {article.title}
                   </div>
                   <br />
-                  <div>
-                    <span className="card-content">{article.author}</span>
+                  <div className="author">
+                    {article.author}
                   </div>
                   <br />
-                  <div>
-                    <span className="card-content">{article.snippet}</span>
+                  <div className="snippet">
+                    {article.snippet}
                   </div>
                 </div>
               </div>
