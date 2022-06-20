@@ -1,7 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { getArticles } from "../functions";
-import '../styles/ArticlesList.style.css'
+// import '../styles/ArticlesList.style.css'
+// import {
+//   ArticlesListContainer
+// } from '../styles/ArticlesList.style'
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+
 
 const ArticlesList = () => {
   const [article, setArticle] = useState({
@@ -34,6 +41,10 @@ const ArticlesList = () => {
   }, []);
 
   return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="md" display="inline-flex">
+        <Box sx={{height: '100vh'}} />
     <div className="container">
       <div className="cardContainer">
         <h1>CURRENT PUBLICATIONS</h1>
@@ -69,6 +80,8 @@ const ArticlesList = () => {
         </div>
       </div>
     </div>
+    </Container>
+    </React.Fragment>
   );
 };
 export default ArticlesList;

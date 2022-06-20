@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li.markets {
+    
+    list-style-type: "\1F955";
+    
+}
+

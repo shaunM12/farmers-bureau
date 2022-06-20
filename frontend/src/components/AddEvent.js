@@ -29,7 +29,7 @@ const AddEvent = () => {
 
         setEvent(initialEventState)
         setSubmitted(false)
-        navigate('/')
+        navigate('/addevent')
     }
 
     const saveEvent = () => {

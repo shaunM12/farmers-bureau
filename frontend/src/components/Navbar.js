@@ -19,7 +19,7 @@ const NavBar = () => {
   //to erase the login taken
   const handleLogout = () => {
     localStorage.removeItem('tokenAccess')
-    window.location.reload()
+    window.location('/articles')
   }
 
   //to switch the "login" and "logout" buttons depending on the logged status
@@ -27,14 +27,14 @@ const NavBar = () => {
   if(localStorage.length == 0) { 
     logButton = <NavBarLink to="/login">Login</NavBarLink>
   } else {
-    logButton = <NavBarLink to="/" onClick={handleLogout}>Logout</NavBarLink>
+    logButton = <NavBarLink to="/articles" onClick={handleLogout}>Logout</NavBarLink>
   }
 
   var logButtonExtended = ""
   if(localStorage.length == 0) { 
     logButtonExtended = <NavBarLinkExtended to="/login">Login</NavBarLinkExtended>
   } else {
-    logButtonExtended = <NavBarLinkExtended to="/" onClick={handleLogout}>Logout</NavBarLinkExtended>
+    logButtonExtended = <NavBarLinkExtended to="/articles" onClick={handleLogout}>Logout</NavBarLinkExtended>
   }
 
   return (

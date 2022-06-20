@@ -31,7 +31,8 @@ const Login = () => {
             const url = 'http://localhost:8081/auth'
             const {data: res} = await axios.post(url, data)
             localStorage.setItem("tokenAccess", res.data)
-            window.location="/"
+            window.location="/articles"
+
         }
         catch (error) {
             if(error.response && error.response.status >= 400 && error.response.status <= 500) {
