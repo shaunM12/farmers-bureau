@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import EventService from "../services/EventService";
-import {Link, Outlet, useNavigate} from 'react-router-dom'
-
-
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import '../styles/EventList.style.css'
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -10,11 +9,11 @@ const EventList = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [searchEvent, setSearchEvent] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const navigateAddEvent = () => {
-      navigate('/addevent')
-  }
+    navigate("/addevent");
+  };
 
   useEffect(() => {
     getAllEvents();
@@ -54,90 +53,87 @@ const EventList = () => {
     setCurrentIndex(index);
   };
 
-
   return (
-    <div>
-      <button className="add-event" type='button'
-      onClick={navigateAddEvent}> Add Event </button>
-    <div>
-      <h2>List Of Upcoming Events </h2>
-      <ul className="list">
-        {events &&
-          events.map((event, index) => (
-            <li
-              className={"list-item" + (index === currentIndex ? "active" : "")}
-              onClick={() => setActiveEvent(event, index)}
-              key={index}
-            >
-              {event.name}
-            </li>
-          ))}
-      </ul>
+    <div className="container">
+      <button className="add" type="button" onClick={navigateAddEvent}>
+        {" "}
+        Add Event{" "}
+      </button>
+      <div className="eventContainer">
+        <h2>Upcoming Events </h2>
+        <ul className="list">
+          {events &&
+            events.map((event, index) => (
+              <li
+                className={
+                  "events" + (index === currentIndex ? "active" : "")
+                }
+                onClick={() => setActiveEvent(event, index)}
+                key={index}
+              >
+                {event.name}
+              </li>
+            ))}
+        </ul>
       </div>
-      <div>
-          {currentEvent ? (
-              <div>
-                  <h4>Event</h4>
-                  <div>
-                      <label>
-                          <strong>Event Name:</strong>
-                      </label>{" "}
-                      {currentEvent.name}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Location:</strong>
-                      </label>{" "}
-                      {currentEvent.location}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Start:</strong>
-                      </label>{" "}
-                      {currentEvent.start}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>End:</strong>
-                      </label>{" "}
-                      {currentEvent.end}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Month:</strong>
-                      </label>{" "}
-                      {currentEvent.month}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Day:</strong>
-                      </label>{" "}
-                      {currentEvent.day}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Description:</strong>
-                      </label>{" "}
-                      {currentEvent.description}
-                  </div>
-                  <div>
-                      <label>
-                          <strong>Sponsored By:</strong>
-                      </label>{" "}
-                      {currentEvent.sponsoredBy}
-                  </div>
-                  <Link 
-                  to={'/events/' + currentEvent._id}>
-                      <button>Update Event</button>
-                  </Link>
-              </div>
-          ) : (
-              <div>
-                  <br />
-                  <p>Please choose an event</p>
-      </div>
-          )}
+      <br />
+      <div className="currentContainer">
+        {currentEvent ? (
+          <div>
+            <h4>Event</h4>
+            <div>
+              <label>
+                <strong>Event Name:</strong>
+              </label>{" "}
+              {currentEvent.name}
+            </div>
+            <div>
+              <label>
+                <strong>Location:</strong>
+              </label>{" "}
+              {currentEvent.location}
+            </div>
+            <div>
+              <label>
+                <strong>Start:</strong>
+              </label>{" "}
+              {currentEvent.start}
+            </div>
+            <div>
+              <label>
+                <strong>End:</strong>
+              </label>{" "}
+              {currentEvent.end}
+            </div>
+            <div>
+              <label>
+                <strong>Month:</strong>
+              </label>{" "}
+              {currentEvent.month}
+            </div>
+            <div>
+              <label>
+                <strong>Day:</strong>
+              </label>{" "}
+              {currentEvent.day}
+            </div>
+            <div>
+              <label>
+                <strong>Description:</strong>
+              </label>{" "}
+              {currentEvent.description}
+            </div>
+            <Link to={"/events/" + currentEvent._id}>
+              <button>Update Event</button>
+            </Link>
           </div>
+        ) : (
+          <div>
+            <br />
+            <p>Please choose an event</p>
+          </div>
+        )}
+      </div>
       <Outlet />
     </div>
   );

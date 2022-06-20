@@ -17,7 +17,6 @@ const Event = props => {
         month: "",
         day: "",
         description: "",
-        sponsoredBy: ""
     }
 
     const [currentEvent, setCurrentEvent] = useState(initialEventState)
@@ -60,11 +59,11 @@ const Event = props => {
         EventService.remove(currentEvent._id)
         .then(response => {
             console.log(response.data)
-            navigate('/events')
         })
         .catch(err => {
             console.log(err)
         })
+        navigate('/events')
     }
 
 
@@ -150,17 +149,6 @@ const Event = props => {
                             id="description"
                             name="description"
                             defaultValue={currentEvent.description}
-                            onChange={handleInputChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="sponsoredBy">Event Sponsored By:</label>
-                            <input 
-                            type="text"
-                            className="update-form"
-                            id="sponsoredBy"
-                            name="sponsoredBy"
-                            defaultValue={currentEvent.sponsoredBy}
                             onChange={handleInputChange}
                             />
                         </div>

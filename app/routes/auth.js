@@ -2,6 +2,7 @@ const router = require('express').Router()
 const { User } = require('../models/User')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
+const cookieParser = require('cookie-parser')
 
 router.post('/', async (req, res) => {
     console.log("trying to auth")
@@ -30,6 +31,7 @@ router.post('/', async (req, res) => {
             return res.status(401).send({ message: "Invalid password"})
 
             const token = user.generateAuthToken()
+            res.cookie("token", token)
             res.status(200).send({ data: token, message: "Logged in successfully"})
     } catch(error) {
         res.status(500).send({message: "Sorry unable to validate credentials!"})

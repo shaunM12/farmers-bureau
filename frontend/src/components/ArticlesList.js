@@ -1,6 +1,14 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { getArticles } from "../functions";
+// import '../styles/ArticlesList.style.css'
+// import {
+//   ArticlesListContainer
+// } from '../styles/ArticlesList.style'
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+
 
 const ArticlesList = () => {
   const [article, setArticle] = useState({
@@ -33,30 +41,35 @@ const ArticlesList = () => {
   }, []);
 
   return (
-    <div>
-      <div className="col-md-6">
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="md" display="inline-flex">
+        <Box sx={{height: '100vh'}} />
+    <div className="container">
+      <div className="cardContainer">
         <h1>CURRENT PUBLICATIONS</h1>
-        <div>
+        <br />
+        <div className="articles">
           {articles &&
             articles.map((article, index) => (
                 <Link to={'/articles/' + article._id}>
               <div className="card"
               key={articles._id}
               onClick={() => setActiveArticle(article, index)}>
-                <img style={{ width: "20%" }} src={article.image} />
-                <br />
-                <br />
-                <div className="card-content">
-                  <div>
-                    <span className="card">{article.title}</span>
+                <img src={article.image} />
+              <br />
+            
+                <div className="content">
+                  <div className="title">
+                    {article.title}
                   </div>
                   <br />
-                  <div>
-                    <span className="card-content">{article.author}</span>
+                  <div className="author">
+                    {article.author}
                   </div>
                   <br />
-                  <div>
-                    <span className="card-content">{article.snippet}</span>
+                  <div className="snippet">
+                    {article.snippet}
                   </div>
                 </div>
               </div>
@@ -67,6 +80,8 @@ const ArticlesList = () => {
         </div>
       </div>
     </div>
+    </Container>
+    </React.Fragment>
   );
 };
 export default ArticlesList;

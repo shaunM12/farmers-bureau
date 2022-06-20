@@ -9,7 +9,6 @@ module.exports = mongoose => {
         month: String,
         day: String,
         description: String,
-        sponsoredBy: String,
         creatorId: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
     })
 
