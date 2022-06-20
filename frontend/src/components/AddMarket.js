@@ -11,7 +11,6 @@ import {
 
 
 const AddMarket = () => {
-
     const navigate = useNavigate()
     const initialMarketState = {
         id: null,
@@ -20,22 +19,18 @@ const AddMarket = () => {
         time: "",
         location: ""
     }
-
     const [market, setMarket] = useState(initialMarketState)
     const [submitted, setSubmitted] = useState(false)
-
     const handleInputChange = e => {
         e.preventDefault()
         const {name, value} = e.target
         setMarket({...market, [name]: value})
     }
-
     const newMarket = () => {
         setMarket(initialMarketState)
         setSubmitted(false)
         navigate('/AddMarket')
     }
-
     const saveMarket = () => {
         const data = {
             where: market.where,
@@ -43,7 +38,6 @@ const AddMarket = () => {
             time: market.time,
             location: market.location
         }
-
         MarketService.create(data)
         .then(response => {
             setMarket({
@@ -60,13 +54,12 @@ const AddMarket = () => {
             console.log(err)
         })
     }
-
     return (
         <AddMarketContainer>
             <Header>Add A New Farmer's Market</Header>
         <div className="submit-form">
             {submitted ? (
-                <div> 
+                <div>
                     <h3>THANK YOU FOR SUBMITTING A NEW FARMER'S MARKET</h3>
                     <button onClick={newMarket}>Add Another</button>
                     </div>
@@ -123,5 +116,4 @@ const AddMarket = () => {
         </AddMarketContainer>
     )
 }
-
 export default AddMarket

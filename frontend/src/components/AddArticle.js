@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import FileBase64 from "react-file-base64";
 import { useNavigate } from "react-router";
 import { createArticle, getArticles } from "../functions";
-
+import '../styles/AddArticle.style.css'
 
 const AddArticle = () => {
 
@@ -28,10 +28,10 @@ const AddArticle = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Add a New Article</h1>
-      <div className="container">
-        <pre>{JSON.stringify(article, null, "\t")}</pre>
+      <div className="form">
+        {/* <pre>{JSON.stringify(article, null, "\t")}</pre> */}
         <form action="" onSubmit={onSubmitHandler}>
           <input
             type="text"
