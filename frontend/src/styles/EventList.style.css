@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+li.events {
+    
+    list-style-type: "\1F352";
+    
+=======
 .container {
     display: flex;
     flex-direction: column;
@@ -35,4 +41,5 @@ h2 {
     justify-content: space between;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+>>>>>>> main
 }

@@ -1,97 +1,97 @@
-import {useState, useEffect} from 'react'
-import MarketService from '../services/MarketService'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
-
+import { useState, useEffect } from "react";
+import MarketService from "../services/MarketService";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import "../styles/MarketsList.style.css";
 
 const MarketsList = () => {
-    const [markets, setMarkets] = useState([])
-    const [currentMarket, setCurrentMarket] = useState(null)
-    const [currentIndex, setCurrentIndex] = useState(-1)
+  const [markets, setMarkets] = useState([]);
+  const [currentMarket, setCurrentMarket] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
-    useEffect(() => {
-        getAllMarkets()
-    }, [])
+  useEffect(() => {
+    getAllMarkets();
+  }, []);
 
-    const getAllMarkets = () => {
-        MarketService.getAll()
-        .then((response) => {
-            setMarkets(response.data)
-            console.log(response.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
-    
-    const setActiveMarket = (market, index) => {
-        console.log(market)
-        setCurrentMarket(market)
-        setCurrentIndex(index)
-    }
+  const getAllMarkets = () => {
+    MarketService.getAll()
+      .then((response) => {
+        setMarkets(response.data);
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    return (
+  const setActiveMarket = (market, index) => {
+    console.log(market);
+    setCurrentMarket(market);
+    setCurrentIndex(index);
+  };
 
+  return (
+    <div className="container">
+      <div>
+        <h2>Farmer's Markets</h2>
         <div>
-            <h2>Farmer's Markets</h2>
+          <ul className="markets">
+            {markets &&
+              markets.map((market, index) => (
+                <li
+                  className={
+                    "markets" + (index === currentIndex ? "active" : "")
+                  }
+                  onClick={() => setActiveMarket(market, index)}
+                  key={index}
+                >
+                  {market.where}
+                </li>
+              ))}
+          </ul>
+        </div>
+        <div>
+          {currentMarket ? (
             <div>
-            <ul className="list">
-                {markets && 
-                markets.map((market, index) => (
-                    <li 
-                    className={"list-item" + (index === currentIndex ? "active" : "")}
-                    onClick={() => setActiveMarket(market, index)}
-                    key={index}
-                    >
-                        {market.where}
-                        </li>
-                ))}
-            </ul>
+              <h4>Farmer's Market:</h4>
+              <div>
+                <label>
+                  <strong>Where:</strong>
+                </label>{" "}
+                {currentMarket.where}
+              </div>
+              <div>
+                <label>
+                  <strong>Days:</strong>
+                </label>{" "}
+                {currentMarket.days}
+              </div>
+              <div>
+                <label>
+                  <strong>Time:</strong>
+                </label>{" "}
+                {currentMarket.time}
+              </div>
+              <div>
+                <label>
+                  <strong>Location:</strong>
+                </label>{" "}
+                {currentMarket.location}
+              </div>
+              <Link to={"/markets/" + currentMarket._id}>
+                <button>Update Farmer's Market</button>
+              </Link>
             </div>
-        <div>
-            
-{currentMarket ? (
-    <div>
-        <h4>Farmer's Market:</h4>
-        <div>
-            <label>
-                <strong>Where</strong>
-            </label>{" "}
-            {currentMarket.where}
-        </div>
-        <div>
-            <label>
-                <strong>Days:</strong>
-            </label>{" "}
-            {currentMarket.days}
-        </div>
-        <div>
-            <label>
-                <strong>Time:</strong>
-            </label>{" "}
-            {currentMarket.time}
-        </div>
-        <div>
-            <label>
-                <strong>Location:</strong>
-            </label>{" "}
-            {currentMarket.location}
-        </div>
-       <Link to={'/markets/' + currentMarket._id}>
-           <button>Update Farmer's Market</button>
-           </Link>
-           </div>
-) : (
-
-    <div>
-        <br />
-        <p>Please choose a farmer's market</p>
-    </div>
-)}
+          ) : (
+            <div>
+              <br />
+              <p>Please choose a farmer's market</p>
+            </div>
+          )}
         </div>
         <Outlet />
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-
-export default MarketsList
+export default MarketsList;

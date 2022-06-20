@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {CookiesProvider} from 'react-cookie'
-
 import Register from './components/Register'
 import Login from './components/Login'
 import ArticlesList from './components/ArticlesList'
@@ -21,13 +20,19 @@ import Navbar from './components/Navbar'
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './auth';
 import Footer from './components/Footer';
+<<<<<<< HEAD
+import ThemeProvider from 'react-bootstrap/ThemeProvider'
+import { useMediaQuery } from 'react-responsive'
+=======
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+>>>>>>> main
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <div className="entireApp">
   <CookiesProvider>
   
   <BrowserRouter>
@@ -52,7 +57,7 @@ root.render(
   </BrowserRouter>
   <Footer />
   </CookiesProvider>
-
+  </div>
 );
 
 
