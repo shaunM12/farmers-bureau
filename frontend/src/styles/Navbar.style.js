@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 
 export const NavBarContainer = styled.nav `
     width: 100%;
-    height: 120px;
-    background-color: #6BA43A;
+    height: ${(props) => (props.extendNavBar ? "100vh" : "80px")};
+    // background-color: black;
     display: flex;
     flex-direction: column;
 
     @media(min-width: 700px) {
-        height: 100px;
+        height: 80px;
     }
 `;  
 
@@ -25,7 +25,7 @@ export const RightContainer = styled.div `
     display: flex;
     justify-content: flex-end;
     padding-right: 5%;
-
+   
 `;
 
 export const NavbarInnerContainer = styled.div `
@@ -43,8 +43,8 @@ export const NavBarLink = styled (Link) `
     font-family: Poppins, sans-serif;
     text-decoration: none;
     margin: 10px;
-    color: dark-grey; 
-    padding-top: 10px;
+    color: green; 
+
     @media(max-width: 700px) {
         display: none;
     }
