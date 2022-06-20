@@ -10,7 +10,7 @@ import {
   Logo,
   OpenLinksButton,
   NavBarLinkExtended,
-} from '../styles/Navbar.style'
+} from '../styles/NavBar.style'
 import LogoImg from '../images/HFF.png'
 
 const NavBar = () => {
