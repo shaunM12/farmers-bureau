@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import EventService from '../services/EventService'
 import { useNavigate } from 'react-router'
+import {
+    AddEventContainer,
+    AddEventButton,
+    Header,
+    AddEventForm,
+    AddButtonContainer
+} from '../styles/AddEvent.style'
 
 const AddEvent = () => {
 
@@ -29,7 +36,7 @@ const AddEvent = () => {
 
         setEvent(initialEventState)
         setSubmitted(false)
-        navigate('/')
+        navigate('/addevent')
     }
 
     const saveEvent = () => {
@@ -63,8 +70,8 @@ const AddEvent = () => {
     }
 
     return (
-        <div>
-        <h1>Add A New Event</h1>
+        <AddEventContainer>
+        <Header>Add A New Event</Header>
         <div className="submit-form">
             {submitted ? (
                 <div>
@@ -76,7 +83,7 @@ const AddEvent = () => {
                     </div>
             ) : (
                 <div className="add-form">
-                    <form>
+                    <AddEventForm>
                 <div>
                     <label htmlFor="name">Event Name:</label>
                     <input
@@ -88,6 +95,7 @@ const AddEvent = () => {
                     name="name"
                     />
                 </div>
+                <br/>
                 <div>
                     <label htmlFor="location">Location:</label>
                     <input
@@ -99,6 +107,7 @@ const AddEvent = () => {
                     name="location"
                     />
                 </div>
+                <br />
                 <div>
                     <label htmlFor="start">Start:</label>
                     <input
@@ -110,6 +119,7 @@ const AddEvent = () => {
                     name="start"
                     />
                 </div>
+                <br />
                 <div>
                     <label htmlFor="end">End:</label>
                     <input
@@ -121,7 +131,7 @@ const AddEvent = () => {
                     name="end"
                     />
                 </div>
-
+                <br />
                 <div>
                     <label htmlFor="month">Month:</label>
                     <input
@@ -133,6 +143,7 @@ const AddEvent = () => {
                     name="month"
                     />
                 </div>
+                <br />
                 <div>
                     <label htmlFor="day">Day:</label>
                     <input
@@ -144,6 +155,7 @@ const AddEvent = () => {
                     name="day"
                     />
                 </div>
+                <br />
                 <div>
                     <label htmlFor="description">Description:</label>
                     <input
@@ -155,12 +167,16 @@ const AddEvent = () => {
                     name="description"
                     />
                 </div>
-                </form>
-                <button onClick={saveEvent}>Submit</button>
+                </AddEventForm>
+                <br />
+            
+                <AddButtonContainer>
+                <AddEventButton onClick={saveEvent}>Submit</AddEventButton>
+                </AddButtonContainer>
             </div>
             )}
         </div>
-        </div>
+        </AddEventContainer>
     )
 }
 

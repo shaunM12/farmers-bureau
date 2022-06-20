@@ -66,7 +66,7 @@ const EventList = () => {
             events.map((event, index) => (
               <li
                 className={
-                  "list-item" + (index === currentIndex ? "active" : "")
+                  "events" + (index === currentIndex ? "active" : "")
                 }
                 onClick={() => setActiveEvent(event, index)}
                 key={index}

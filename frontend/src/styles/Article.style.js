@@ -8,9 +8,6 @@ export const Acontainer = styled.div `
 
 `
     
-
-
-
 export const Acard = styled.div `
     display: flex;
     justify-content: center;
@@ -19,8 +16,6 @@ export const Acard = styled.div `
     margin-top: 3rem;       
 
 `
-    
-    
 
 export const Title = styled.h1  `
     font-family: 'Poppins', sans-serif;
@@ -32,8 +27,6 @@ export const Title = styled.h1  `
 
 
 `
-    
-
 
 export const Aauthor = styled.p 
     `font-family: 'Poppins', sans-serif;
@@ -57,7 +50,7 @@ export const Acontent = styled.p
     font-size: 20px;`
 
 
-export const Img= styled.img  
+export const Img = styled.img  
    ` /* width: auto;
     height: auto; */
     position: relative;
