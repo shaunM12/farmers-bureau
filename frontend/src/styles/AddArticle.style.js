@@ -2,7 +2,13 @@ import styled from 'styled-components'
 
 
 export const AddArticleContainer = styled.div `
-width: 100%`
+margin-left: 10px;
+// margin-right: rem;
+width: 100%
+display: flex;
+flex-direction: column;
+`
+
 
 export const AddArticleButton = styled.button `
     // display: flex;
