@@ -24,6 +24,7 @@ import Footer from './components/Footer';
 
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CookiesProvider>
@@ -48,7 +49,7 @@ root.render(
   </Routes>
   </AuthProvider>
   </BrowserRouter>
-  <Footer></Footer>
+  <Footer />
   </CookiesProvider>
 
 );

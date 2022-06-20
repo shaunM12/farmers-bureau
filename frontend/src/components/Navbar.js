@@ -30,6 +30,13 @@ const NavBar = () => {
     logButton = <NavBarLink to="/" onClick={handleLogout}>Logout</NavBarLink>
   }
 
+  var logButtonExtended = ""
+  if(localStorage.length == 0) { 
+    logButtonExtended = <NavBarLinkExtended to="/login">Login</NavBarLinkExtended>
+  } else {
+    logButtonExtended = <NavBarLinkExtended to="/" onClick={handleLogout}>Logout</NavBarLinkExtended>
+  }
+
   return (
     <NavBarContainer extendNavBar={extendNavBar}>
       <NavbarInnerContainer>
@@ -39,7 +46,6 @@ const NavBar = () => {
 
         <RightContainer>
           <NavBarLinkContainer>
-            {/* <NavBarLink to="/login">Login</NavBarLink> */}
             {logButton}
             <NavBarLink to="/articles">Home</NavBarLink>
             <NavBarLink to="/register">Register</NavBarLink>
@@ -59,9 +65,9 @@ const NavBar = () => {
       </NavbarInnerContainer>
       {extendNavBar && (
         <NavbarExtendedContainer>
+          {logButtonExtended}
           <NavBarLinkExtended to="/articles" onClick>Home</NavBarLinkExtended>
           <NavBarLinkExtended to="/register" onClick>Register</NavBarLinkExtended>
-          <NavBarLinkExtended to="/login" onClick>Login</NavBarLinkExtended>
           <NavBarLinkExtended to="/events" onClick>Events</NavBarLinkExtended>
           <NavBarLinkExtended to="/addarticle" onClick>
             Add a New Article
