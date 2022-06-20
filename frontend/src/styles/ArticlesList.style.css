@@ -2,8 +2,10 @@
     display: flex;
     width: 100%;
     height: 1319px;
+  
     margin-left: 3rem;
 }
+
 .cardContainer {
     display: flex;
     justify-content: center;
@@ -11,18 +13,22 @@
     flex-direction: column;
     margin-left: 1rem;
 }
+
 h1 {
-    font-family: ‘Poppins’, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 35;
     text-align: center;
     margin-left: 2%;
 }
+
 .articles {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+
 }
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -31,6 +37,7 @@ h1 {
     margin-left: 2rem;
     margin-top: 5px;
 }
+
 img {
     width: 313px;
     /* height: 222px; */
@@ -39,32 +46,38 @@ img {
     /* position: absolute; */
     float: left;
     /* margin: 10px; */
+    
 }
+
 .content{
     float: right;
     position: relative;
     /* width: 836px; */
     height: auto;
 }
+
 .title {
-    font-family: ‘Poppins’, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20;
     text-align: center;
     margin-right: 10%;
 }
+
 .author {
-    font-family: ‘Poppins’, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20;
     text-align: center;
     max-width: 80%;
     margin-left: 5%;
 
+
 }
+
 .snippet {
-    font-family: ‘Poppins’, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20;
     justify-content: space-between;
-    margin-left: 2rem;
+    margin-left: 2rem; 
     margin-bottom: 2rem;
     text-align: left;
     max-width: 85%;
