@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Routes, Route, Outlet}  from 'react-router-dom'
 import Register from './components/Register'
-import Home from './components/Home';
+import Home from './components/ArticlesList';
 
 
 

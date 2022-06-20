@@ -1,7 +1,7 @@
 .container {
     display: flex;
     width: 100%;
-    height: 1319px;
+    /* height: 1319px; */
   
     margin-left: 3rem;
 }

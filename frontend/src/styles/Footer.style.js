@@ -28,9 +28,10 @@ export const FooterParagraph = styled.div`
 
 export const Logo = styled.img`
   display: flex;
-  justify-content: space-between;
-  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  margin: center;
+  align-items: auto;
   max-width: 200px;
   height: auto;
-  // padding: 1rem;
 `

@@ -11,7 +11,7 @@ import EventList from "./components/EventList"
 import Event from './components/Event'
 import AddEvent from './components/AddEvent'
 import AddArticle from './components/AddArticle'
-import Home from './components/Home'
+import Home from './components/ArticlesList'
 import Article from './components/Article'
 import Market from './components/Market';
 import AddMarket from './components/AddMarket';

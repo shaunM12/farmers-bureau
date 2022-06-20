@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { 
-  FooterContainer, 
-  Logo, 
+  FooterContainer,
   FooterParagraph,
+  Logo,
   // ExtraSpace
 } from '../styles/Footer.style'
 
