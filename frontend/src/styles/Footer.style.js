@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-export const ExtraSpace = styled.div`
+// export const ExtraSpace = styled.div`
 // display: flex;
 // flex-direction: column;
-// min-height: 74vh;
-`
+// min-height: 100vh;
+// `
 
 export const FooterContainer = styled.div`
   width: 100%;

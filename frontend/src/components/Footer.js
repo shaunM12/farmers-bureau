@@ -3,13 +3,13 @@ import {
   FooterContainer, 
   Logo, 
   FooterParagraph,
-  ExtraSpace
+  // ExtraSpace
 } from '../styles/Footer.style'
 
 const Footer = () => {
   return (
     <>
-    <ExtraSpace> </ExtraSpace>
+    {/* <ExtraSpace> </ExtraSpace> */}
         <FooterContainer>
       <FooterParagraph>
         Please visit the Hawaii Farm Bureau website

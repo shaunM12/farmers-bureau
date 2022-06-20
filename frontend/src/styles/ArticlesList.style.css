@@ -1,9 +1,9 @@
 .container {
-    /* display: flex; */
-    width: 864px;
-    height: 1319px;
+    display: flex;
+    width: 100%;
+    /* height: 1319px; */
   
-    margin-left: 3rem;
+    /* margin-left: 2rem; */
 }
 
 .cardContainer {
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 13rem;
+    margin-left: 1rem;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
 .articles {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 
 }
@@ -31,14 +31,15 @@ h1 {
 .card {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-    margin-left: 5rem;
+    margin-left: 2rem;
+    margin-top: 5px;
 }
 
 img {
     width: 313px;
-    height: 222px;
+    /* height: 222px; */
     /* justify-content: space-between;
     flex-direction: row; */
     /* position: absolute; */
@@ -50,8 +51,8 @@ img {
 .content{
     float: right;
     position: relative;
-    width: 836px;
-    height: 222px;
+    /* width: 836px; */
+    height: auto;
 }
 
 .title {
@@ -64,7 +65,7 @@ img {
     font-family: 'Poppins', sans-serif;
     font-size: 20;
     text-align: center;
-
+    max-width: 80%;
 }
 
 .snippet {
@@ -74,4 +75,5 @@ img {
     margin-left: 2rem; 
     margin-bottom: 2rem;
     text-align: left;
+    max-width: 80%;
 }

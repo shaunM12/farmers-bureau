@@ -50,7 +50,7 @@ const ArticlesList = () => {
             
                 <div className="content">
                   <div className="title">
-                   {article.title}
+                    {article.title}
                   </div>
                   <br />
                   <div className="author">
