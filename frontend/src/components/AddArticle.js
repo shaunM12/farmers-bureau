@@ -31,7 +31,7 @@ const AddArticle = () => {
     <div className="container">
       <h1>Add a New Article</h1>
       <div className="form">
-        <pre>{JSON.stringify(article, null, "\t")}</pre>
+        {/* <pre>{JSON.stringify(article, null, "\t")}</pre> */}
         <form action="" onSubmit={onSubmitHandler}>
           <input
             type="text"

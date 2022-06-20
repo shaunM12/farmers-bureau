@@ -2,7 +2,16 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getArticle } from '../functions'
 import ArticleService from '../services/ArticleService'
-import '../styles/Article.style.css'
+import '../styles/Article.style.js'
+import {
+  Acontainer,
+  Acard,
+  Title,
+  Aauthor,
+  Acontent,
+  Img
+
+} from '../styles/Article.style'
 
 const Article = (props) => {
   const { id } = useParams()
@@ -32,30 +41,30 @@ const Article = (props) => {
   }, [id])
 
   return (
-    <div className="conatiner">
+    <Acontainer>
       {currentArticle ? (
-        <div className="acard" key={currentArticle._id}>
-          <h1>{currentArticle.title}</h1>
+        <Acard key={currentArticle._id}>
+          <Title>{currentArticle.title}</Title>
 
-          <img src={currentArticle.image} />
+          <Img src={currentArticle.image} />
           <div className="card-content">
             <div>
               <br />
               <div>
-                <span className="aauthor">{currentArticle.author}</span>
+                <Aauthor>{currentArticle.author}</Aauthor>
               </div>
               <br />
               <br />
               <div>
-                <span className="acontent">{currentArticle.content}</span>
+                <Acontent>{currentArticle.content}</Acontent>
               </div>
             </div>
           </div>
-        </div>
+        </Acard>
       ) : (
         <p>Pick another article</p>
       )}
-    </div>
+    </Acontainer>
   )
 }
 

@@ -1,10 +1,16 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router'
 import MarketService from '../services/MarketService'
+import {
+    AddMarketContainer,
+    AddMarketButton,
+    Header,
+    AddMarketForm,
+    AddButtonContainer,
+} from '../styles/AddMarket.style'
 
 
 const AddMarket = () => {
-
     const navigate = useNavigate()
     const initialMarketState = {
         id: null,
@@ -13,22 +19,18 @@ const AddMarket = () => {
         time: "",
         location: ""
     }
-
     const [market, setMarket] = useState(initialMarketState)
     const [submitted, setSubmitted] = useState(false)
-
     const handleInputChange = e => {
         e.preventDefault()
         const {name, value} = e.target
         setMarket({...market, [name]: value})
     }
-
     const newMarket = () => {
         setMarket(initialMarketState)
         setSubmitted(false)
         navigate('/AddMarket')
     }
-
     const saveMarket = () => {
         const data = {
             where: market.where,
@@ -36,7 +38,6 @@ const AddMarket = () => {
             time: market.time,
             location: market.location
         }
-
         MarketService.create(data)
         .then(response => {
             setMarket({
@@ -53,19 +54,18 @@ const AddMarket = () => {
             console.log(err)
         })
     }
-
     return (
-        <div>
-            <h1>Add A New Farmer's Market</h1>
+        <AddMarketContainer>
+            <Header>Add A New Farmer's Market</Header>
         <div className="submit-form">
             {submitted ? (
-                <div> 
+                <div>
                     <h3>THANK YOU FOR SUBMITTING A NEW FARMER'S MARKET</h3>
                     <button onClick={newMarket}>Add Another</button>
                     </div>
             ) : (
                 <div className="add-form">
-                    <form>
+                    <AddMarketForm>
                         <div>
                             <label htmlFor="where">Where:</label>
                             <input
@@ -106,13 +106,14 @@ const AddMarket = () => {
                             onChange={handleInputChange}
                             name="location" />
                         </div>
-                    </form>
-                    <button onClick={saveMarket}>Submit</button>
+                        </AddMarketForm>
+                        <AddButtonContainer>
+                    <AddMarketButton onClick={saveMarket}>Submit</AddMarketButton>
+                    </AddButtonContainer>
                     </div>
             )}
         </div>
-        </div>
+        </AddMarketContainer>
     )
 }
-
 export default AddMarket
