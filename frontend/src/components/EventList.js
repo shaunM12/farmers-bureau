@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EventService from "../services/EventService";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import "../styles/EventList.style.css";
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -60,12 +61,12 @@ const EventList = () => {
       </button>
       <div>
         <h2>List Of Upcoming Events </h2>
-        <ul className="list">
+        <ul className="events">
           {events &&
             events.map((event, index) => (
               <li
                 className={
-                  "list-item" + (index === currentIndex ? "active" : "")
+                  "events" + (index === currentIndex ? "active" : "")
                 }
                 onClick={() => setActiveEvent(event, index)}
                 key={index}

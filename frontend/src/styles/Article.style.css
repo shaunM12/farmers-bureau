@@ -1,9 +1,11 @@
-.container {
+.acontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    width: 15%;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 .acard {

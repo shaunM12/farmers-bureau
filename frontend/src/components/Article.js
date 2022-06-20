@@ -32,7 +32,7 @@ const Article = (props) => {
   }, [id])
 
   return (
-    <div className="conatiner">
+    <div className="acontainer">
       {currentArticle ? (
         <div className="acard" key={currentArticle._id}>
           <h1>{currentArticle.title}</h1>

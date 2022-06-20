@@ -1,6 +1,13 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router'
 import MarketService from '../services/MarketService'
+import {
+    AddMarketContainer,
+    AddMarketButton,
+    Header,
+    AddMarketForm,
+    AddButtonContainer,
+} from '../styles/AddMarket.style'
 
 
 const AddMarket = () => {
@@ -55,8 +62,8 @@ const AddMarket = () => {
     }
 
     return (
-        <div>
-            <h1>Add A New Farmer's Market</h1>
+        <AddMarketContainer>
+            <Header>Add A New Farmer's Market</Header>
         <div className="submit-form">
             {submitted ? (
                 <div> 
@@ -65,7 +72,7 @@ const AddMarket = () => {
                     </div>
             ) : (
                 <div className="add-form">
-                    <form>
+                    <AddMarketForm>
                         <div>
                             <label htmlFor="where">Where:</label>
                             <input
@@ -106,12 +113,14 @@ const AddMarket = () => {
                             onChange={handleInputChange}
                             name="location" />
                         </div>
-                    </form>
-                    <button onClick={saveMarket}>Submit</button>
+                        </AddMarketForm>
+                        <AddButtonContainer>
+                    <AddMarketButton onClick={saveMarket}>Submit</AddMarketButton>
+                    </AddButtonContainer>
                     </div>
             )}
         </div>
-        </div>
+        </AddMarketContainer>
     )
 }
 
