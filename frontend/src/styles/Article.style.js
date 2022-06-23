@@ -5,7 +5,6 @@ export const Acontainer = styled.div `
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 `
     
 export const Acard = styled.div `
@@ -14,7 +13,6 @@ export const Acard = styled.div `
     align-items: center;
     flex-direction: column;
     margin-top: 3rem;       
-
 `
 
 export const Title = styled.h1  `
@@ -24,12 +22,10 @@ export const Title = styled.h1  `
     align-items: center;
     flex-direction: column;
     text-align: center;
-
-
 `
 
-export const Aauthor = styled.p 
-    `font-family: 'Poppins', sans-serif;
+export const Aauthor = styled.p `
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,20 +34,22 @@ export const Aauthor = styled.p
 `
 
 
-export const Acontent = styled.p  
-    `font-family: 'Poppins', sans-serif;
+export const Acontent = styled.p `
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     text-align: left;
-    width: 1000px;
-    height: 1214px;
-    font-size: 20px;`
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    margin: 2rem;
+    `
 
 
-export const Img = styled.img  
-   ` /* width: auto;
+export const Img = styled.img ` 
+  /* width: auto;
     height: auto; */
     position: relative;
 `
