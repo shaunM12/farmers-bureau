@@ -7,9 +7,9 @@ export const NavBarContainer = styled.nav `
     // background-color: black;
     display: flex;
     flex-direction: column;
-    @media(min-width: 1000px) {
-        height: 120px;
 
+    @media(min-width: 700px) {
+        height: 80px;
     }
 `;  
 
@@ -25,11 +25,12 @@ export const RightContainer = styled.div `
     display: flex;
     justify-content: flex-end;
     padding-right: 5%;
+   
 `;
 
 export const NavbarInnerContainer = styled.div `
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
 `;
 
@@ -42,9 +43,9 @@ export const NavBarLink = styled (Link) `
     font-family: Poppins, sans-serif;
     text-decoration: none;
     margin: 10px;
-    color: dark-grey; 
-    padding-top: 30px;
-    @media(max-width: 1000px) {
+    color: green; 
+
+    @media(max-width: 700px) {
         display: none;
     }
 `
@@ -66,14 +67,14 @@ export const Logo = styled.img `
 
 export const OpenLinksButton = styled.button `
     width: 70px;
-    height:120px;
+    height: 50px;
     background: none;
     border: none;
-    color: dark-grey;
+    color: gray;
     font-size: 45px;
     curser: pointer;
 
-    @media(min-width: 1000px) {
+    @media(min-width: 700px) {
         display: none;
     }
 `
@@ -82,10 +83,8 @@ export const NavbarExtendedContainer = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #6BA43A;
-    background: opaque;
-    @media (min-width: 1000px) {
+
+    @media (min-width: 700px) {
         display: none;
     }
-`
-;
+`;
